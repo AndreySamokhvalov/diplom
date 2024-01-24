@@ -1,0 +1,19 @@
+$widthSite: 1520px;
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.center {
+  padding-left: calc(50% - $widthSite / 2);
+  padding-right: calc(50% - $widthSite / 2);
+}
+
+// цвет фона кнопок
+$btn_color: #19A2DC;
+// цвет текста заголовков
+$textColorDisplay: black;
+// цвет текста параграфов
+$textColorLack: black;
