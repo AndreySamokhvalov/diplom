@@ -10,8 +10,8 @@
 
         <div class="comand__cards">
             <div class="comand__card">
-                <img src="../assets/photo_instructor1.jpg" alt="" class="comand__card_img">
-                <img src="../assets/name_couch1.svg" alt="" class="comand__card_name_img">
+                <img src="../assets/photo_instructor1.jpg" alt="gid" class="comand__card_img">
+                <img src="../assets/name_couch1.svg" alt="couch_name" class="comand__card_name_img">
                 <div class="skill">
                     <p class="skil_name skill_text">> 15 лет опыта </p>
                     <p class="skil_time skill_text">35 лет</p>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="comand__card">
-                <img src="../assets/photo_instructor2.jpg" alt="" class="comand__card_img">
+                <img src="../assets/photo_instructor2.jpg" alt="gid" class="comand__card_img">
                 <img src="../assets/name_couch2.svg" alt="" class="comand__card_name_img">
                 <div class="skill">
                     <p class="skil_name skill_text">> 10 лет опыта </p>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="comand__card">
-                <img src="../assets/photo_instructor3.jpg" alt="" class="comand__card_img">
+                <img src="../assets/photo_instructor3.jpg" alt="gid" class="comand__card_img">
                 <img src="../assets/name_couch3.svg" alt="" class="comand__card_name_img">
                 <div class="skill">
                     <p class="skil_name skill_text">> 12 лет опыта </p>
@@ -208,7 +208,7 @@ export default {
 
 
     &_text {
-        color: #ffffff;
+        color: $textColorContrast;
         font-family: Lack;
         font-size: 20px;
         font-style: normal;

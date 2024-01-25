@@ -3,19 +3,19 @@
         <div class="monual">
             <div class="monual__icons">
                 <div class="monual__icons_elm">
-                    <img src="../assets/select_path_icn.svg" alt="" class="monual__icons_elem_img">
+                    <img src="../assets/select_path_icn.svg" alt="monual" class="monual__icons_elem_img">
                     <p class="monual__icons_elm_description">Выберете подходящий маршрут похода на сайте</p>
                 </div>
                 <div class="monual__icons_elm">
-                    <img src="../assets/request.svg" alt="" class="monual__icons_elem_img">
+                    <img src="../assets/request.svg" alt="monual" class="monual__icons_elem_img">
                     <p class="monual__icons_elm_description">Оставьте нам свои контактные данные в анкете</p>
                 </div>
                 <div class="monual__icons_elm">
-                    <img src="../assets/conect.svg" alt="" class="monual__icons_elem_img">
+                    <img src="../assets/conect.svg" alt="monual" class="monual__icons_elem_img">
                     <p class="monual__icons_elm_description">Наш консультант свяжется с Вами уже через 3 минуты</p>
                 </div>
                 <div class="monual__icons_elm">
-                    <img src="../assets/map.svg" alt="" class="monual__icons_elem_img">
+                    <img src="../assets/map.svg" alt="monual" class="monual__icons_elem_img">
 
                     <p class="monual__icons_elm_description">Наслаждайтесь путешествием вместе с нами!</p>
                 </div>
@@ -91,7 +91,7 @@ export default {
 
 .monual__icons {
     display: flex;
-    gap: 154px;
+    gap: 110px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -138,7 +138,7 @@ export default {
         line-height: normal;
         text-transform: uppercase;
         margin-left: 5px;
-        ;
+        
     }
 
     &_text {
