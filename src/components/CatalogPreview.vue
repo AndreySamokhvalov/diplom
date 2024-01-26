@@ -54,7 +54,7 @@
                     <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
                     <div class="path_name_container">
                         <h4 class="path__card_name_name">
-                            мднодневная экспедиция
+                            многодневная экспедиция
                         </h4>
                     </div>
                 </div>
