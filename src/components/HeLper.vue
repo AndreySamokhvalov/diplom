@@ -10,29 +10,47 @@
                 </span>
             </div>
             <div class="helper__text_btn">
-                <button class="helper__text_btn_elem">отправить</button>
+                <button @click="show()" class="helper__text_btn_elem">отправить</button>
             </div>
         </div>
+        <FoRma v-show=visible @close="show()" />
     </div>
 </template>
 
 <script>
+import FoRma from '@/components/FoRma.vue';
+// import { eventBus } from '../main.js';
+
 export default {
-    name: 'FoOter',
+
+    name: 'HeLper',
 
     data() {
         return {
-
+            visible: false,
         };
+    },
+    components: {
+        FoRma
     },
 
     mounted() {
+        
+    },
+    created() {
 
     },
+  
 
     methods: {
 
+        show() {
+            this.visible = !this.visible
+        }
+
+
     },
+
 };
 </script>
 
@@ -82,6 +100,7 @@ export default {
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
+
     &_elem {
         color: $textColorLack;
         font-family: Lack;

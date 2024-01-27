@@ -7,7 +7,9 @@
     <AdVantages />
     <CatalogPreview />
     <HeLper />
+    <!-- <FoRma /> -->
     <FoOter />
+
   </div>
 </template>
 
@@ -36,7 +38,8 @@ export default {
     AdVantages,
     CatalogPreview,
     HeLper,
-    FoOter
+    FoOter,
+    // FoRma,
   },
 
 }

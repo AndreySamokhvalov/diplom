@@ -3,7 +3,8 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About us</router-link>
+      <router-link to="/about">About us</router-link>|
+      <router-link to="/catalog">Catalog</router-link>
     </nav>
     <router-view/>
   </div>
@@ -11,6 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+// import { mapMutations } from 'vuex';
 export default {
   
   name: 'App',
@@ -28,6 +30,7 @@ export default {
 
 
   methods: {
+    // ...mapMutations(["SET_VISIBLE","SET_VISIBLEOFF"])
 
   },
   computed: {

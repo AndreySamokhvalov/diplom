@@ -117,6 +117,8 @@
 
 
             </div>
+
+
         </div>
         <div class="select__btn">
         <button class="select__btn_elem ">Смотреть все</button>
@@ -212,7 +214,7 @@ export default {
 
 .path__card_name_name {
 
-    top: -230px;
+    top: 10px;
     left: 48px;
     color: $textColorContrast;
     text-align: center;

@@ -58,6 +58,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'FoOter',
 
@@ -66,6 +67,8 @@ export default {
 
         };
     },
+
+
 
     mounted() {
 
