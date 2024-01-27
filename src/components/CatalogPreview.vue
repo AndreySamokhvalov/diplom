@@ -127,6 +127,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'CatalogPreview',
 
@@ -143,6 +144,7 @@ export default {
     methods: {
 
     },
+  
 };
 </script>
 

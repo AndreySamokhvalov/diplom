@@ -49,122 +49,53 @@
 
 
 
-        <div class="catalog__cards">
+        <div class="catalog__cards"  >
 
-            <div class="catalog__catalog_item">
-                <img src="../assets/path1.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            Однодневная экспедиция
-                        </h4>
+            <div class="catalog-preview__catalog_item" v-for="card in getPaths()" :key="card">
+                    <img :src=card.url alt="paht1" class="item_img">
+                    <div class="name_block">
+                        <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
+                        <div class="path_name_container">
+                            <h4 class="path__card_name_name">
+                                {{ card.title }}
+                            </h4>
+                        </div>
                     </div>
-                </div>
-                <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-                <!-- настройка вместительности и сложности -->
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        12
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        3
-                    </span>
-                </div>
-
-                <div class="desctiption__btn">
-                    <button class="desctiption__btn_elem">Подробнее</button>
-                </div>
-            </div>
-
-            <div class="catalog__catalog_item">
-                <img src="../assets/path1.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            Однодневная экспедиция
-                        </h4>
+                    <div class="item_rating">
+                        <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
+                        <h4 class="rating_rating">рейтинг</h4>
                     </div>
-                </div>
-                <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-                <!-- настройка вместительности и сложности -->
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        12
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        3
-                    </span>
-                </div>
-
-                <div class="desctiption__btn">
-                    <button class="desctiption__btn_elem">Подробнее</button>
-                </div>
-            </div>
-
-            <div class="catalog__catalog_item">
-                <img src="../assets/path1.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            Однодневная экспедиция
-                        </h4>
+                    <!-- настройка вместительности и сложности -->
+                    <div class="item_capacity">
+                        <span class="item_capacity_text">
+                            вместимость группы:
+                        </span>
+                        <span class="item_capacity_int item_capacity_text">
+                            {{ card.capacity}}
+                        </span>
                     </div>
-                </div>
-                <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-                <!-- настройка вместительности и сложности -->
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        12
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        3
-                    </span>
+                    <div class="item_complexity">
+                        <span class="item_complexity_text">
+                            сложность:
+                        </span>
+                        <span class="item_complexity_int item_complexity_text ">
+                            {{ card.lvl}}
+                        </span>
+                    </div>
+
+
                 </div>
 
-                <div class="desctiption__btn">
-                    <button class="desctiption__btn_elem">Подробнее</button>
-                </div>
-            </div>
 
 
 
         </div>
+
+        
+
+
+
+
     </div>
 </template>
 
@@ -185,6 +116,12 @@ export default {
     },
 
     methods: {
+        
+        getPaths() {
+            return this.$store.getters.getPath
+        },
+
+
         showComplexity() {
             this.complexityVisible = !this.complexityVisible;
             this.durationVisible =false;
