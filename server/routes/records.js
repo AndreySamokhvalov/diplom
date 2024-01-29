@@ -13,11 +13,11 @@ router.get('/', async (req, res) => {
 
 //  новые запросы
 
-router.get('/paths', async (req, res) => {
+router.get('/pathList', async (req, res) => {
    res.json(await ShowPaths.find());
 });
 
-router.post('/paths', async (req, res) => {
+router.post('/pathList', async (req, res) => {
    const record1 = new ShowPaths(req.body);
    await record1.save();
    res.json({ state: 'success' });

@@ -8,7 +8,7 @@ const app = express();
 app.set('port', 3000);
 
 
-mongoose.connect('mongodb://127.0.0.1/mybd', { 
+mongoose.connect('mongodb://127.0.0.1/pathList', { 
     useNewUrlParser: true,
     useUnifiedTopology: true })
     .then(db => console.log('[OK] requestsDB is connected'))
@@ -45,7 +45,7 @@ app.use(morgan('dev'));
 
 app.use('/api/records', require('./routes/records'));
 // новая регистрация
-app.use('/api/records/paths', require('./routes/records'));
+app.use('/api/records/pathList', require('./routes/records'));
 
 app.use('/', express.static(path.join(__dirname, '../dist')));
 

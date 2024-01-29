@@ -65,6 +65,9 @@ export default {
 
   },
   methods: {
+
+
+
     async sendData() {
       // console.log(await axios({
       await axios({

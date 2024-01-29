@@ -11,7 +11,13 @@
                 </p>
             </div>
         </div>
-        <div class="catalog-preview__catalog">
+
+<div class="catalog-preview__catalog">
+    <CaRousel />
+</div>
+
+
+        <!-- <div class="catalog-preview__catalog">
 
             <div class="catalog-preview__catalog_item">
                 <img src="../assets/path1.jpg" alt="paht1" class="item_img">
@@ -24,10 +30,10 @@
                     </div>
                 </div>
                 <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
+                    
                     <h4 class="rating_rating">рейтинг</h4>
                 </div>
-                <!-- настройка вместительности и сложности -->
+               
                 <div class="item_capacity">
                     <span class="item_capacity_text">
                         вместимость группы:
@@ -59,10 +65,10 @@
                     </div>
                 </div>
                 <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
+                    
                     <h4 class="rating_rating">рейтинг</h4>
                 </div>
-                <!-- настройка вместительности и сложности -->
+                
                 <div class="item_capacity">
                     <span class="item_capacity_text">
                         вместимость группы:
@@ -94,10 +100,10 @@
                     </div>
                 </div>
                 <div class="item_rating">
-                    <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
+                    
                     <h4 class="rating_rating">рейтинг</h4>
                 </div>
-                <!-- настройка вместительности и сложности -->
+                
                 <div class="item_capacity">
                     <span class="item_capacity_text">
                         вместимость группы:
@@ -119,7 +125,12 @@
             </div>
 
 
-        </div>
+        </div> -->
+
+
+
+
+
         <div class="select__btn">
         <button class="select__btn_elem ">Смотреть все</button>
     </div>
@@ -127,7 +138,7 @@
 </template>
 
 <script>
-
+import CaRousel from '@/components/CaRousel.vue';
 export default {
     name: 'CatalogPreview',
 
@@ -143,6 +154,9 @@ export default {
 
     methods: {
 
+    },
+    components: {
+        CaRousel,
     },
   
 };

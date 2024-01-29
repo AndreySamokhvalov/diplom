@@ -3,47 +3,49 @@
         <div class="inner" ref="inner" :style="innerStyles">
             <div class="card" v-for="card in getPaths()" :key="card">
 
+                <router-link to="/catalog">
 
-                <div class="catalog-preview__catalog_item">
-                    <img :src=card.url alt="paht1" class="item_img">
-                    <div class="name_block">
-                        <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                        <div class="path_name_container">
-                            <h4 class="path__card_name_name">
-                                {{ card.title }}
-                            </h4>
+                    <div class="catalog-preview__catalog_item">
+                        <img :src=card.url alt="paht1" class="item_img">
+                        <div class="name_block">
+                            <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
+                            <div class="path_name_container">
+                                <h4 class="path__card_name_name">
+                                    {{ card.title }}
+                                </h4>
+                            </div>
                         </div>
-                    </div>
-                    <div class="item_rating">
-                        <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
-                        <h4 class="rating_rating">рейтинг</h4>
-                    </div>
-                    <!-- настройка вместительности и сложности -->
-                    <div class="item_capacity">
-                        <span class="item_capacity_text">
-                            вместимость группы:
-                        </span>
-                        <span class="item_capacity_int item_capacity_text">
-                            {{ card.capacity}}
-                        </span>
-                    </div>
-                    <div class="item_complexity">
-                        <span class="item_complexity_text">
-                            сложность:
-                        </span>
-                        <span class="item_complexity_int item_complexity_text ">
-                            {{ card.lvl}}
-                        </span>
-                    </div>
+                        <div class="item_rating">
+
+                            <star-rating :rating=card.rating :read-only="true" :increment="0.01"></star-rating>
+                        </div>
+                        <!-- настройка вместительности и сложности -->
+                        <div class="item_capacity">
+                            <span class="item_capacity_text">
+                                вместимость группы:
+                            </span>
+                            <span class="item_capacity_int item_capacity_text">
+                                {{ card.capacity }}
+                            </span>
+                        </div>
+                        <div class="item_complexity">
+                            <span class="item_complexity_text">
+                                сложность:
+                            </span>
+                            <span class="item_complexity_int item_complexity_text ">
+                                {{ card.lvl }}
+                            </span>
+                        </div>
 
 
-                </div>
-                
+                    </div>
+                </router-link>
+
             </div>
         </div>
         <div class="btn_group">
-           <img @click="prev" src="../assets/rigth_btn.svg" alt="rigth" class="rul_btn rul_btn_r">
-            <img  @click="next" src="../assets/left_btn.svg" alt="left" class="rul_btn rul_btn_l">
+            <img @click="prev" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
+            <img @click="next" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
         </div>
     </div>
 </template>
@@ -131,9 +133,11 @@ export default {
         resetTranslate() {
             this.innerStyles = {
                 transition: 'none',
-                transform: `translateX(0)`
+                transform: `translateX(0)
+                `
             }
         }
+
     }
 }
 </script>
@@ -147,34 +151,38 @@ export default {
 //     align-items: center;
 // }   
 .carousel {
-
+    max-width: 1520px;
     // display: flex;
-    max-width: 1320px;
+    // max-width: 760px;
     overflow: hidden;
+    margin-bottom: 100px;
 }
 
 .inner {
     transition: transform 0.3s;
     white-space: nowrap;
 }
-.rul_btn{
+
+.rul_btn {
     width: 50px;
-    &_r{
+
+    &_r {
         position: relative;
         top: -360px;
-        left: -540px;
+        left: -680px;
     }
-    &_l{
+
+    &_l {
         position: relative;
         top: -360px;
-        left: 750px;
+        left: 700px;
     }
 }
 
 .card {
     width: 390px;
     height: 626px;
-    margin-left: 38px;
+    margin-left: 90px;
 
     display: inline-flex;
 
@@ -225,7 +233,8 @@ button {
 .item_rating {
     position: relative;
     top: -750px;
-    right: 120px;
+    // right: 200px;
+    left: 30px;
 }
 
 .path_name_container {
@@ -261,7 +270,7 @@ button {
     display: flex;
     position: relative;
     left: 18px;
-    top: -250px;
+    top: -270px;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -283,7 +292,7 @@ button {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    top: -240px;
+    top: -270px;
     left: 18px;
 
 

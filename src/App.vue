@@ -12,6 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { mapMutations } from 'vuex';
 // import { mapMutations } from 'vuex';
 export default {
   
@@ -30,7 +31,8 @@ export default {
 
 
   methods: {
-    // ...mapMutations(["SET_VISIBLE","SET_VISIBLEOFF"])
+    // создаю мутацию
+    ...mapMutations(["SET_PATHLIST"])
 
   },
   computed: {

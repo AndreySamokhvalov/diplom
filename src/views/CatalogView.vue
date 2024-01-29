@@ -25,7 +25,8 @@
                     </div>
                     <div class="catalog__filter_optional_list">
                         <h5 class="catalog__filter_optional_list_elem filter__txt">размер группы</h5>
-                        <button @click="showSize()"><img src="../assets/left_st.svg" alt="show me" class="show_or_not"></button>
+                        <button @click="showSize()"><img src="../assets/left_st.svg" alt="show me"
+                                class="show_or_not"></button>
                     </div>
                 </div>
             </div>
@@ -49,29 +50,30 @@
 
 
 
-        <div class="catalog__cards"  >
+        <div class="catalog__cards">
 
             <div class="catalog-preview__catalog_item" v-for="card in getPaths()" :key="card">
-                    <img :src=card.url alt="paht1" class="item_img">
-                    <div class="name_block">
-                        <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                        <div class="path_name_container">
-                            <h4 class="path__card_name_name">
-                                {{ card.title }}
-                            </h4>
-                        </div>
+                <img :src=card.url alt="paht1" class="item_img">
+                <div class="name_block">
+                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
+                    <div class="path_name_container">
+                        <h4 class="path__card_name_name">
+                            {{ card.title }}
+                        </h4>
                     </div>
-                    <div class="item_rating">
-                        <!-- https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/         https://vuejsexamples.com/a-simple-and-highly-customisable-star-rating-component-for-vue/   -->
-                        <h4 class="rating_rating">рейтинг</h4>
-                    </div>
-                    <!-- настройка вместительности и сложности -->
+                </div>
+                <div class="item_rating">
+                    <!-- импортирую библиотеки для рейтинга -->
+                    <star-rating :rating=card.rating :read-only="true" :increment="0.01"></star-rating>
+                </div>
+                <!-- настройка вместительности и сложности -->
+                
                     <div class="item_capacity">
                         <span class="item_capacity_text">
                             вместимость группы:
                         </span>
                         <span class="item_capacity_int item_capacity_text">
-                            {{ card.capacity}}
+                            {{ card.capacity }}
                         </span>
                     </div>
                     <div class="item_complexity">
@@ -79,19 +81,19 @@
                             сложность:
                         </span>
                         <span class="item_complexity_int item_complexity_text ">
-                            {{ card.lvl}}
+                            {{ card.lvl }}
                         </span>
                     </div>
+                
 
-
-                </div>
+            </div>
 
 
 
 
         </div>
 
-        
+
 
 
 
@@ -100,11 +102,18 @@
 </template>
 
 <script>
+// import axios from 'axios';
+// import { mapMutations } from 'vuex';
 export default {
     name: 'Catalog',
 
     data() {
         return {
+            rating: "No Rating Selected",
+            currentRating: "No Rating",
+            currentSelectedRating: "No Current Rating",
+            boundRating: 3,
+            // pathList1: [],
             complexityVisible: false,
             durationVisible: false,
             sizeVisible: false,
@@ -113,28 +122,53 @@ export default {
 
     mounted() {
 
+
+
+    },
+    async created() {
+        // try {
+        //     const response = await axios.get(`http://localhost:3000/api/records/pathList`);
+        //     this.pathList1 = response.data;
+        //     // this.SET_PATHLIST(this.pathList1)
+        //     // store.commit('SET_PATHLIST',pathList1)
+        // } catch (e) {
+        //     this.errors.push(e)
+        // }
+
     },
 
     methods: {
-        
-        getPaths() {
-            return this.$store.getters.getPath
+
+        setRating: function (rating) {
+            this.rating = "You have Selected: " + rating + " stars";
+        },
+        showCurrentRating: function (rating) {
+            this.currentRating = (rating === 0) ? this.currentSelectedRating : "Click to select " + rating + " stars"
+        },
+        setCurrentSelectedRating: function (rating) {
+            this.currentSelectedRating = "You have Selected: " + rating + " stars";
         },
 
+        // ...mapMutations(["SET_PATHLIST"]),
 
+
+        getPaths() {
+            return this.$store.getters.getPath
+            // return this.pathList1
+        },
         showComplexity() {
             this.complexityVisible = !this.complexityVisible;
-            this.durationVisible =false;
+            this.durationVisible = false;
             this.sizeVisible = false;
         },
         showDuration() {
             this.durationVisible = !this.durationVisible;
-            this.complexityVisible =false;
+            this.complexityVisible = false;
             this.sizeVisible = false;
         },
         showSize() {
             this.sizeVisible = !this.sizeVisible;
-            this.durationVisible =false;
+            this.durationVisible = false;
             this.complexityVisible = false;
         },
     }
@@ -154,8 +188,9 @@ export default {
 .item_rating {
     position: relative;
     top: -120px;
-    right: 120px;
+    right: -100px;
 }
+
 
 .path_name_container {
     width: 252px;
@@ -183,6 +218,8 @@ export default {
     position: relative;
     top: -200px;
     left: 48px;
+    transition: all;
+    
 }
 
 .item_capacity {
@@ -196,7 +233,7 @@ export default {
     justify-content: space-between;
 
     &_text {
-        color: $textColorContrast;
+        color: rgb(0, 0, 0);
         font-family: Lack;
         font-size: 26px;
         font-style: normal;
@@ -217,7 +254,7 @@ export default {
 
 
     &_text {
-        color: $textColorContrast;
+        color: rgb(0, 0, 0);
         font-family: Lack;
         font-size: 26px;
         font-style: normal;
@@ -265,6 +302,13 @@ export default {
 .catalog__catalog_item {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.c_and_c{
+    width: 390px;
+    height: auto;
+    // border-color: #000;
+    border: 3px solid #000;
 }
 
 .catalog__filter {
@@ -353,4 +397,69 @@ export default {
     align-items: center;
     transition: width 2s;
 }
+
+.catalog-preview__catalog_item{
+    border: 3px solid #000;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 820px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    border-radius: 20px;
+}
+.catalog-preview__catalog_item:hover{
+    border: 3px solid $btn_color;
+    // border-top: 0;
+    // border-left: 0;
+    // border-right: 0;
+    height: 820px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    border-radius: 20px;
+    transition-duration: .3s;
+}
+.catalog-preview__catalog_item:hover .path__card_name_img {
+    position: relative;
+    width: 486px;
+   
+}
+img{
+    transition:  .3s;
+}
+img:hover{
+    transform: scale(1.005);
+}
+.catalog-preview__catalog_item:hover .path__card_name_name{
+    top: -230px;
+    left: 48px;
+    color: $textColorContrast;
+    // text-align: center;
+    font-family: Lack;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    transition-duration: .3s;
+
+}
+
+.catalog-preview__catalog_item:hover .path_name_container {
+    width: 252px;
+    height: 58px;
+    position: relative;
+    top: -303px;
+    left: 160px;
+    transition-duration: .3s;
+}
+.catalog-preview__catalog_item:hover .item_capacity{
+    width: 450px;
+    transition-duration: .3s;
+ 
+ }
+ .catalog-preview__catalog_item:hover .item_complexity{
+    width: 450px;
+    transition-duration: .3s;
+ }
 </style>
