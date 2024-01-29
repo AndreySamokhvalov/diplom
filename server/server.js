@@ -13,6 +13,16 @@ mongoose.connect('mongodb://127.0.0.1/mybd', {
     .then(db => console.log('[OK] DB is connected'))
     .catch(err => console.error(err));
 
+
+// добавляю подключение к еще одной бд
+
+mongoose.createConnection('mongodb://127.0.0.1/pathsdb', { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true })
+// новая регистрация
+app.use('/api/records/paths', require('./routes/records'));
+
+
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('dev'));
@@ -23,3 +33,5 @@ app.use('/', express.static(path.join(__dirname, '../dist')));
 app.listen(app.get('port'), () => {
     console.log(`[OK] Server is running on localhost:${app.get('port')}`);
 });   
+
+

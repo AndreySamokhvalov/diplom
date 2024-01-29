@@ -4,11 +4,25 @@ const nodemailer = require('nodemailer');
 
 
 const Record = require('../models/Record.js');
+//  это тоже
+const ShowPaths = require('../models/ShowPaths.js');
 
 router.get('/', async (req, res) => {
    res.json(await Record.find());
 });
 
+//  новые запросы
+
+router.get('/paths', async (req, res) => {
+   res.json(await ShowPaths.find());
+});
+
+router.post('/paths', async (req, res) => {
+   const record1 = new ShowPaths(req.body);
+   await record1.save();
+   res.json({ state: 'success' });
+});
+// ==============
 router.post('/', async (req, res) => {
    const record = new Record(req.body);
    await record.save();
@@ -28,8 +42,14 @@ router.post('/', async (req, res) => {
      </p>
      `;
 
+
+   //   создаю промежуточный массив, для отправки письма и пользователю и администратору
+   let mailCl = String(req.body.email);
+   const mailArr = [mailCl, 'samlik1993@mail.ru'];
+
+
    let transporter = nodemailer.createTransport({
-      
+
       host: 'smtp.mail.ru',
       port: 465,
       secure: true, // true for 465, false for other ports
@@ -42,7 +62,7 @@ router.post('/', async (req, res) => {
 
    let mailOptions = {
       from: '"turist_project" <samokvalov.andy93@mail.ru>',
-      to: 'samlik1993@mail.ru',
+      to: mailArr,
       subject: `turist_project | Новая заявка`,
       text: req.body.name,
       html: output
