@@ -139,6 +139,8 @@ export default {
 }
 .advantages__cards_elem:hover .advantages__cards_elem_title{
     background-color: $btn_color;
+    right: 60px;
+    transform: transition all .3s;
 }
 
 .advantages__cards_elem {
@@ -163,6 +165,7 @@ export default {
     position: relative;
     right: 25px;
     align-items: center;
+    transition: all .3s;
 
 }
 

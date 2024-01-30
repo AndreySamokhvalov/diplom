@@ -9,9 +9,9 @@
             <!-- </slot> -->
           </header>
           <section class="modal-body">
-            <slot name="body">
-              Modal body
-            </slot>
+         
+            {{ itemData.description }}
+           
           </section>
           <footer class="modal-footer">
 

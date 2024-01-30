@@ -179,6 +179,7 @@ export default {
 .item_img {
     width: 390px;
     height: 626px;
+    margin-top: 24px;
 }
 
 .rating_rating {
@@ -197,7 +198,8 @@ export default {
     height: 58px;
     position: relative;
     top: -273px;
-    left: 80px
+    left: 80px;
+    
 }
 
 .path__card_name_name {
@@ -212,14 +214,14 @@ export default {
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    transition: .3s;
+    transition: all .3s;
 }
 
 .path__card_name_img {
     position: relative;
     top: -200px;
     left: 48px;
-    transition: all;
+    transition:all .3s ;
     
 }
 
@@ -232,6 +234,7 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+    transition:all .3s ;
 
     &_text {
         color: rgb(0, 0, 0);
@@ -252,6 +255,7 @@ export default {
     justify-content: space-between;
     top: -100px;
     left: 18px;
+    transition:all .3s ;
 
 
     &_text {
@@ -406,8 +410,10 @@ export default {
     border-right: 0;
     height: 820px;
     margin-bottom: 70px;
-    margin-top: 70px;
+    margin-top: 170px;
     border-radius: 20px;
+    transition:all .3s ;
+    // transform: transition all .3s ;
     
 }
 .catalog-preview__catalog_item:hover{
@@ -421,6 +427,9 @@ export default {
     border-radius: 20px;
     transition-duration: .2s;
     width: 450px;
+    position: relative;
+    z-index: 1;
+    transform: transition border .3s ;
 }
 .catalog-preview__catalog_item:hover .path__card_name_img {
     position: relative;
