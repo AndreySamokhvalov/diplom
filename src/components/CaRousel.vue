@@ -41,27 +41,22 @@
                 </div>
                 <!-- </router-link> -->
 
-               
+                <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
             </div>
         </div>
         <div class="btn_group">
-            <img @click="prev" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
-            <img @click="next" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
+            <!-- убираю стрелочки из модального окна с помощью v-show -->
+            <img @click="prev" v-show="!isShowModal" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
+            <img @click="next" v-show="!isShowModal" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
         </div>
 
-        <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
+        
 
     </div>
 </template>
   
 <script>
 import Modal from '@/components/Modal.vue';
-
-
-
-
-
-
 export default {
     name: 'CaRousel',
 
@@ -196,7 +191,7 @@ export default {
 }
 
 .inner {
-    transition: transform 0.3s;
+    transition: transform  0.3s;
     white-space: nowrap;
 }
 

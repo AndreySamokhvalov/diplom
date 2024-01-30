@@ -275,7 +275,7 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -413,6 +413,7 @@ export default {
     margin-top: 170px;
     border-radius: 20px;
     transition:all .3s ;
+    z-index: 5;
     // transform: transition all .3s ;
     
 }
@@ -426,10 +427,12 @@ export default {
     margin-top: 70px;
     border-radius: 20px;
     transition-duration: .2s;
-    width: 450px;
+    width: 464px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     transform: transition border .3s ;
+    margin-left: -24px;
+    margin-right: -24px;
 }
 .catalog-preview__catalog_item:hover .path__card_name_img {
     position: relative;
@@ -446,9 +449,9 @@ img{
     top: -230px;
     left: 48px;
     color: $textColorContrast;
-    // text-align: center;
+  
     font-family: Lack;
-    font-size: 26px;
+    
     font-style: normal;
     font-weight: 400;
     line-height: normal;
