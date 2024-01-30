@@ -2,6 +2,7 @@
   <div class="home">
 
     <!-- <FoRma msg="Заполни форму"/> -->
+    <BaNner />
     <MoNual />
     <CoMand />
     <AdVantages />
@@ -22,7 +23,7 @@ import AdVantages from '@/components/AdVantages.vue';
 import CatalogPreview from '@/components/CatalogPreview.vue';
 import FoOter from '@/components/FoOter.vue';
 import HeLper from '@/components/HeLper.vue';
-
+import BaNner from '@/components/BaNner.vue';
 
 export default {
   data() {
@@ -39,6 +40,7 @@ export default {
     CatalogPreview,
     HeLper,
     FoOter,
+    BaNner,
     // FoRma,
   },
 
@@ -46,5 +48,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.home{
+  overflow: hidden;
+}
 
 </style>
