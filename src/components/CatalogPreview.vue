@@ -138,6 +138,7 @@
 </template>
 
 <script>
+
 import CaRousel from '@/components/CaRousel.vue';
 export default {
     name: 'CatalogPreview',

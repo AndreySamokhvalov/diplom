@@ -212,6 +212,7 @@ export default {
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    transition: .3s;
 }
 
 .path__card_name_img {
@@ -407,6 +408,7 @@ export default {
     margin-bottom: 70px;
     margin-top: 70px;
     border-radius: 20px;
+    
 }
 .catalog-preview__catalog_item:hover{
     border: 3px solid $btn_color;
@@ -417,26 +419,27 @@ export default {
     margin-bottom: 70px;
     margin-top: 70px;
     border-radius: 20px;
-    transition-duration: .3s;
+    transition-duration: .2s;
+    width: 450px;
 }
 .catalog-preview__catalog_item:hover .path__card_name_img {
     position: relative;
-    width: 486px;
+    left: 0;
+    transition-duration: .3s;
+    // width: 486px;
    
 }
 img{
     transition:  .3s;
 }
-img:hover{
-    transform: scale(1.005);
-}
+
 .catalog-preview__catalog_item:hover .path__card_name_name{
     top: -230px;
     left: 48px;
     color: $textColorContrast;
     // text-align: center;
     font-family: Lack;
-    font-size: 34px;
+    font-size: 26px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -449,17 +452,18 @@ img:hover{
     width: 252px;
     height: 58px;
     position: relative;
-    top: -303px;
-    left: 160px;
+    // top: -303px;
+    // left: 160px;
     transition-duration: .3s;
 }
 .catalog-preview__catalog_item:hover .item_capacity{
-    width: 450px;
+    width: 418px;
     transition-duration: .3s;
  
  }
  .catalog-preview__catalog_item:hover .item_complexity{
-    width: 450px;
+    width: 418px;
     transition-duration: .3s;
+    
  }
 </style>

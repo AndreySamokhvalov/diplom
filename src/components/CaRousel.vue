@@ -3,63 +3,85 @@
         <div class="inner" ref="inner" :style="innerStyles">
             <div class="card" v-for="card in getPaths()" :key="card">
 
-                <router-link to="/catalog">
+                <!-- <router-link to="/catalog"> -->
 
-                    <div class="catalog-preview__catalog_item">
-                        <img :src=card.url alt="paht1" class="item_img">
-                        <div class="name_block">
-                            <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                            <div class="path_name_container">
-                                <h4 class="path__card_name_name">
-                                    {{ card.title }}
-                                </h4>
-                            </div>
+                <div @click="toggleModal(), send(card)" class="catalog-preview__catalog_item">
+                    <img :src=card.url alt="paht1" class="item_img">
+                    <div class="name_block">
+                        <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
+                        <div class="path_name_container">
+                            <h4 class="path__card_name_name">
+                                {{ card.title }}
+                            </h4>
                         </div>
-                        <div class="item_rating">
-
-                            <star-rating :rating=card.rating :read-only="true" :increment="0.01"></star-rating>
-                        </div>
-                        <!-- настройка вместительности и сложности -->
-                        <div class="item_capacity">
-                            <span class="item_capacity_text">
-                                вместимость группы:
-                            </span>
-                            <span class="item_capacity_int item_capacity_text">
-                                {{ card.capacity }}
-                            </span>
-                        </div>
-                        <div class="item_complexity">
-                            <span class="item_complexity_text">
-                                сложность:
-                            </span>
-                            <span class="item_complexity_int item_complexity_text ">
-                                {{ card.lvl }}
-                            </span>
-                        </div>
-
-
                     </div>
-                </router-link>
+                    <div class="item_rating">
 
+                        <star-rating :rating=card.rating :read-only="true" :increment="0.01"></star-rating>
+                    </div>
+                    <!-- настройка вместительности и сложности -->
+                    <div class="item_capacity">
+                        <span class="item_capacity_text">
+                            вместимость группы:
+                        </span>
+                        <span class="item_capacity_int item_capacity_text">
+                            {{ card.capacity }}
+                        </span>
+                    </div>
+                    <div class="item_complexity">
+                        <span class="item_complexity_text">
+                            сложность:
+                        </span>
+                        <span class="item_complexity_int item_complexity_text ">
+                            {{ card.lvl }}
+                        </span>
+                    </div>
+
+
+                </div>
+                <!-- </router-link> -->
+
+               
             </div>
         </div>
         <div class="btn_group">
             <img @click="prev" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
             <img @click="next" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
         </div>
+
+        <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
+
     </div>
 </template>
   
 <script>
+import Modal from '@/components/Modal.vue';
+
+
+
+
+
+
 export default {
+    name: 'CaRousel',
+
     data() {
+
         return {
+            isShowModal: false,
+            test: {
+                title: "",
+                description: ""
 
-
+            },
+        
             innerStyles: {},
             step: '',
             transitioning: false
         }
+    },
+    components: {
+        Modal,
     },
 
     mounted() {
@@ -68,6 +90,21 @@ export default {
     },
 
     methods: {
+        send(item) {
+            this.test.title = item.title;
+            this.test.description = item.description;
+            
+           
+
+        },
+        getPathsInfo() {
+            return this.test
+        },
+
+
+        toggleModal() {
+            this.isShowModal = !this.isShowModal;
+        },
         getPaths() {
             return this.$store.getters.getPath
         },
