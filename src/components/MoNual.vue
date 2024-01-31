@@ -31,7 +31,7 @@
                 </div>
                 <img src="../assets/name_board_mypath.svg" alt="" class="monual__title_img">
             </div>
-            <button class="monual__more">подробнее</button>
+            <button class="monual__more btns_config">подробнее</button>
         </div>
 
 </template>

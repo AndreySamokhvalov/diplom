@@ -3,7 +3,7 @@
 
         <transition-group tag="div" :name="transitionName" class="slides-group">
             <div v-if="show" :key="current" class="slide" :class="slides[current].className">
-                <div v-show="slides[current].className=='banner1'" class="banner__show_first">
+                <div v-show="slides[current].className == 'banner1'" class="banner__show_first">
                     <div class="banner__show_first_title">
                         <h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?</h1>
                     </div>
@@ -12,7 +12,7 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem"><span
+                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
                                 class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
                     </div>
                     <div class="name_bord">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div v-show="slides[current].className=='banner2'" class="banner__show_first">
+                <div v-show="slides[current].className == 'banner2'" class="banner__show_first">
                     <div class="banner__show_first_title">
                         <h1 class="banner__show_first_title_elem">попробуй себя в роли капитана походной группы</h1>
                     </div>
@@ -29,7 +29,7 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem"><span
+                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
                                 class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
                     </div>
                     <div class="name_bord board2">
@@ -37,16 +37,17 @@
                     </div>
                 </div>
 
-                <div v-show="slides[current].className=='banner3'" class="banner__show_first">
+                <div v-show="slides[current].className == 'banner3'" class="banner__show_first">
                     <div class="banner__show_first_title">
                         <h1 class="banner__show_first_title_elem">путешествие по московской области - это #безопасно</h1>
                     </div>
                     <div class="banner__show_first_desk">
-                        <p class="banner__show_first_desk_elem ">многодневные экспедиции, пешие однодневные походы и прогулки
+                        <p class="banner__show_first_desk_elem ">многодневные экспедиции, пешие однодневные походы и
+                            прогулки
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem"><span
+                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
                                 class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
                     </div>
                     <div class="name_bord board3">
@@ -54,7 +55,7 @@
                     </div>
                 </div>
 
-                <div v-show="slides[current].className=='banner4'" class="banner__show_first">
+                <div v-show="slides[current].className == 'banner4'" class="banner__show_first">
                     <div class="banner__show_first_title">
                         <h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?</h1>
                     </div>
@@ -63,7 +64,7 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem"><span
+                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
                                 class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
                     </div>
                     <div class="name_bord board4">
@@ -71,8 +72,8 @@
                     </div>
                 </div>
 
-                
-                
+
+
             </div>
         </transition-group>
         <div class="btn btn-prev" aria-label="Previous slide" @click="slide(-1)">
@@ -200,28 +201,34 @@ export default {
                 margin-bottom: 16px;
                 margin-left: 40px;
                 margin-right: 40px;
-                
+
             }
         }
     }
 }
-.name_bord{
+
+.name_bord {
     position: relative;
     top: -635px;
     left: 570px;
     // z-index: 1;
 
 }
-.board2{
+
+.banner__show_first_btn_elem:hover .banner__show_first_btn_elem_text {
+    color: $btn_color;
+}
+
+.board2 {
     left: 522px;
 }
-.board3{
+
+.board3 {
     top: -540px;
     left: 318px;
 }
-.board4{
 
-}
+.board4 {}
 
 
 
@@ -330,5 +337,4 @@ body {
 
 .btn:hover {
     transform: scale(1.1);
-}
-</style>
+}</style>

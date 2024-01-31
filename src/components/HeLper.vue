@@ -10,7 +10,7 @@
                 </span>
             </div>
             <div class="helper__text_btn">
-                <button @click="show()" class="helper__text_btn_elem">отправить</button>
+                <button @click="show()" class="helper__text_btn_elem btns_config">отправить</button>
             </div>
         </div>
         <FoRma v-show=visible @close="show()" />
