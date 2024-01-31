@@ -16,11 +16,11 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive13 }" v-on:click="isActive13 = !isActive13"
+                    <h3 :class="{ 'active': isActive13 }" v-on:click="isActive13 = true, isActive23 = false, isActive33 = false "
                         class="filter__optional_name">#ЛЮБИТЕЛЬ</h3>
-                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = !isActive23"
+                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = true, isActive13 = false, isActive33 = false"
                         class="filter__optional_name">#ТУРИСТ</h3>
-                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = !isActive33"
+                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = true, isActive13 = false, isActive23 = false"
                         class="filter__optional_name">#ВЫЖИВШИЙ</h3>
 
 
@@ -38,11 +38,11 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive21 }" v-on:click="isActive21 = !isActive21"
+                    <h3 :class="{ 'active': isActive21 }" v-on:click="isActive21 = true, isActive22 = false, isActive23 = false"
                         class="filter__optional_name">1 - 2 дня</h3>
-                    <h3 :class="{ 'active': isActive22 }" v-on:click="isActive22 = !isActive22"
+                    <h3 :class="{ 'active': isActive22 }" v-on:click="isActive22 = true, isActive21 = false, isActive23 = false"
                         class="filter__optional_name">3 - 5 дней</h3>
-                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = !isActive23"
+                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = true, isActive21 = false, isActive22 = false"
                         class="filter__optional_name">7 + дней</h3>
 
 
@@ -61,11 +61,11 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive31 }" v-on:click="isActive31 = !isActive31"
+                    <h3 :class="{ 'active': isActive31 }" v-on:click="isActive31 = true, isActive32 = false, isActive33 = false"
                         class="filter__optional_name">до 6 человек</h3>
-                    <h3 :class="{ 'active': isActive32 }" v-on:click="isActive32 = !isActive32"
+                    <h3 :class="{ 'active': isActive32 }" v-on:click="isActive32 = true, isActive31 = false, isActive33 = false"
                         class="filter__optional_name">6 - 15 человек</h3>
-                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = !isActive33"
+                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = true, isActive31 = false, isActive32 = false"
                         class="filter__optional_name">15 + человек</h3>
 
 
@@ -148,12 +148,19 @@ export default {
             isActive11: false,
             isActive12: false,
             isActive13: false,
+
             isActive21: false,
             isActive22: false,
             isActive23: false,
+
             isActive31: false,
             isActive32: false,
             isActive33: false,
+
+            sortTag: "",
+            reserve: [],
+
+
             rating: "No Rating Selected",
             currentRating: "No Rating",
             currentSelectedRating: "No Current Rating",
@@ -165,22 +172,6 @@ export default {
         };
     },
 
-    mounted() {
-
-
-
-    },
-    async created() {
-        // try {
-        //     const response = await axios.get(`http://localhost:3000/api/records/pathList`);
-        //     this.pathList1 = response.data;
-        //     // this.SET_PATHLIST(this.pathList1)
-        //     // store.commit('SET_PATHLIST',pathList1)
-        // } catch (e) {
-        //     this.errors.push(e)
-        // }
-
-    },
 
     methods: {
         addClass() {
@@ -195,6 +186,19 @@ export default {
         },
         setCurrentSelectedRating: function (rating) {
             this.currentSelectedRating = "You have Selected: " + rating + " stars";
+        },
+
+        togleCoplexity() {
+            if (this.isActive11 && this.isActive21 || this.isActive31) { 
+                this.isActive21 = !this.isActive11;
+                this.isActive31 = !this.isActive11
+            } else if (this.isActive21) { 
+                this.isActive11 = !this.isActive21;
+                this.isActive31 = !this.isActive21;
+            } else if (this.isActive31) { 
+                this.isActive21 = !this.isActive31;
+                this.isActive11 = !this.isActive31;
+            }
         },
 
         // ...mapMutations(["SET_PATHLIST"]),
@@ -425,7 +429,8 @@ export default {
     &:hover path {
         fill: $btn_color;
     }
-    &:active path{
+
+    &:active path {
         fill: rgb(234, 119, 119);
         border: 1px solid var(--btn_bg, #b30000);
 
@@ -639,4 +644,5 @@ img {
     width: 418px;
     transition-duration: .3s;
 
-}</style>
+}
+</style>
