@@ -12,6 +12,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 import { mapMutations } from 'vuex';
 // import { mapMutations } from 'vuex';
 export default {
@@ -36,7 +37,7 @@ export default {
 
   },
   computed: {
-
+    ...mapState(['pathList']),
     ...mapGetters(["getPath"]),
     
   },

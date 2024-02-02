@@ -4,10 +4,13 @@
 
         <div class="filter">
             <div class="filter__title">
-                <h3>подобрать маршрут по:</h3>
+                <div class="board__search">
+                    <h3 class="filter__title_elem1" @click="filtrItems()">подобрать</h3>
+                </div>
+                <h3 class="filter__title_elem2">маршрут по:</h3>
             </div>
             <details class="filter__elem tit_complexity">
-                <summary class="filter__summary"><span class="filter__heading complex">СЛОЖНОСТЬ</span><svg
+                <summary class="filter__summary"><span :class="{ 'activeDet': isActive12 || isActive11 || isActive13 }" class="filter__heading complex">СЛОЖНОСТЬ</span><svg
                         class="filter__triangle" xmlns="http://www.w3.org/2000/svg" width="10" height="16"
                         viewBox="0 0 10 16">
                         <path
@@ -16,11 +19,14 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive13 }" v-on:click="isActive13 = true, isActive23 = false, isActive33 = false "
+                    <h3 :class="{ 'active': isActive11 }"
+                        v-on:click="isActive11 = true, isActive12 = false, isActive13 = false, sortTagComplexity = 'beginner'"
                         class="filter__optional_name">#ЛЮБИТЕЛЬ</h3>
-                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = true, isActive13 = false, isActive33 = false"
+                    <h3 :class="{ 'active': isActive12 }"
+                        v-on:click="isActive12 = true, isActive13 = false, isActive11 = false, sortTagComplexity = 'tourist'"
                         class="filter__optional_name">#ТУРИСТ</h3>
-                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = true, isActive13 = false, isActive23 = false"
+                    <h3 :class="{ 'active': isActive13 }"
+                        v-on:click="isActive13 = true, isActive12 = false, isActive11 = false, sortTagComplexity = 'hardcore'"
                         class="filter__optional_name">#ВЫЖИВШИЙ</h3>
 
 
@@ -29,7 +35,7 @@
             </details>
 
             <details class="filter__elem tit_time">
-                <summary class="filter__summary"><span class="filter__heading long_time">ДЛИТЕЛЬНОСТЬ</span><svg
+                <summary class="filter__summary"><span :class="{ 'activeDet': isActive22 || isActive21 || isActive23 }" class="filter__heading long_time">ДЛИТЕЛЬНОСТЬ</span><svg
                         class="filter__triangle" xmlns="http://www.w3.org/2000/svg" width="10" height="16"
                         viewBox="0 0 10 16">
                         <path
@@ -38,11 +44,14 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive21 }" v-on:click="isActive21 = true, isActive22 = false, isActive23 = false"
+                    <h3 :class="{ 'active': isActive21 }"
+                        v-on:click="isActive21 = true, isActive22 = false, isActive23 = false, sortTagDuration = 'fast'"
                         class="filter__optional_name">1 - 2 дня</h3>
-                    <h3 :class="{ 'active': isActive22 }" v-on:click="isActive22 = true, isActive21 = false, isActive23 = false"
+                    <h3 :class="{ 'active': isActive22 }"
+                        v-on:click="isActive22 = true, isActive21 = false, isActive23 = false, sortTagDuration = 'norm'"
                         class="filter__optional_name">3 - 5 дней</h3>
-                    <h3 :class="{ 'active': isActive23 }" v-on:click="isActive23 = true, isActive21 = false, isActive22 = false"
+                    <h3 :class="{ 'active': isActive23 }"
+                        v-on:click="isActive23 = true, isActive21 = false, isActive22 = false, sortTagDuration = 'long'"
                         class="filter__optional_name">7 + дней</h3>
 
 
@@ -52,7 +61,7 @@
             </details>
 
             <details class="filter__elem tit_size">
-                <summary class="filter__summary"><span class="filter__heading capas">РАЗМЕР ГРУППЫ</span><svg
+                <summary class="filter__summary"><span :class="{ 'activeDet': isActive32 || isActive31 || isActive33 }" class="filter__heading capas">РАЗМЕР ГРУППЫ</span><svg
                         class="filter__triangle" xmlns="http://www.w3.org/2000/svg" width="10" height="16"
                         viewBox="0 0 10 16">
                         <path
@@ -61,18 +70,21 @@
                     </svg></summary>
 
                 <div class="filter__optional">
-                    <h3 :class="{ 'active': isActive31 }" v-on:click="isActive31 = true, isActive32 = false, isActive33 = false"
+                    <h3 :class="{ 'active': isActive31 }"
+                        v-on:click="isActive31 = true, isActive32 = false, isActive33 = false, sortTagCapacity = 's'"
                         class="filter__optional_name">до 6 человек</h3>
-                    <h3 :class="{ 'active': isActive32 }" v-on:click="isActive32 = true, isActive31 = false, isActive33 = false"
+                    <h3 :class="{ 'active': isActive32 }"
+                        v-on:click="isActive32 = true, isActive31 = false, isActive33 = false, sortTagCapacity = 'm'"
                         class="filter__optional_name">6 - 15 человек</h3>
-                    <h3 :class="{ 'active': isActive33 }" v-on:click="isActive33 = true, isActive31 = false, isActive32 = false"
+                    <h3 :class="{ 'active': isActive33 }"
+                        v-on:click="isActive33 = true, isActive31 = false, isActive32 = false, sortTagCapacity = 'l'"
                         class="filter__optional_name">15 + человек</h3>
 
 
                 </div>
 
             </details>
-            <div class="no_filter">
+            <div @click="clearFilt(), filtrItems(), closeDetails()" class="no_filter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M37.5 19.1111C40.8152 19.1111 43.9946 20.3695 46.3388 22.6096C48.683 24.8496 50 27.8877 50 31.0556C50 37.6523 44.4036 43 37.5 43C30.5964 43 25 37.6523 25 31.0556C25 24.4588 30.5964 19.1111 37.5 19.1111ZM37.5 21.5C31.9772 21.5 27.5 25.7782 27.5 31.0556C27.5 36.3329 31.9772 40.6111 37.5 40.6111C43.0228 40.6111 47.5 36.3329 47.5 31.0556C47.5 25.7782 43.0228 21.5 37.5 21.5ZM41.7824 25.2743L43.5502 26.9635L39.2676 31.0555L43.5502 35.1476L41.7824 36.8368L37.5 32.7446L33.2176 36.8368L31.4498 35.1476L35.7322 31.0555L31.4498 26.9635L33.2176 25.2743L37.5 29.3663L41.7824 25.2743ZM40 0L22.5 20.3801V34.0417H17.5L17.5 20.3802L0 0H40Z"
@@ -81,63 +93,14 @@
             </div>
         </div>
 
-
-
-
-
-
-        <div class="catalog__cards">
-
-            <div class="catalog-preview__catalog_item" v-for="card in getPaths()" :key="card">
-                <img :src=card.url alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            {{ card.title }}
-                        </h4>
-                    </div>
-                </div>
-                <div class="item_rating">
-                    <!-- импортирую библиотеки для рейтинга -->
-                    <star-rating :rating=card.rating :read-only="true" :increment="0.01"></star-rating>
-                </div>
-                <!-- настройка вместительности и сложности -->
-
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        {{ card.capacity }}
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        {{ card.lvl }}
-                    </span>
-                </div>
-
-
-            </div>
-
-
-
-
+        <div class="items_in_catalog">
+            <CatalogItem class="catalog__comp" v-for="item in getPaths" :item-data="item" :key="item.id"></CatalogItem>
         </div>
-
-
-
-
-
-
     </div>
 </template>
 
 <script>
+import CatalogItem from '@/components/CatalogItem.vue';
 // import axios from 'axios';
 // import { mapMutations } from 'vuex';
 export default {
@@ -145,6 +108,13 @@ export default {
 
     data() {
         return {
+
+            firstArr: [],
+            secondArr: [],
+            thirdArr: [],
+            result: [],
+
+
             isActive11: false,
             isActive12: false,
             isActive13: false,
@@ -157,9 +127,9 @@ export default {
             isActive32: false,
             isActive33: false,
 
-            sortTag: "",
-            reserve: [],
-
+            sortTagComplexity: 'def',
+            sortTagCapacity: 'def',
+            sortTagDuration: 'def',
 
             rating: "No Rating Selected",
             currentRating: "No Rating",
@@ -169,15 +139,81 @@ export default {
             complexityVisible: false,
             durationVisible: false,
             sizeVisible: false,
+
+            pathList: [],
         };
     },
 
+    components: {
+        CatalogItem,
+    },
+    computed: {
+        filtrItems() {
+            if (this.pathList.length == 0) {
+
+                this.pathList = this.$store.getters.getPath;
+
+                this.arr1 = this.getPaths.filter(item => this.sortTagComplexity === 'def' || item.tagComplexity === this.sortTagComplexity);
+
+                this.arr2 = this.arr1.filter(item => this.sortTagCapacity === 'def' || item.tagCapacity === this.sortTagCapacity);
+
+                this.$store.state.pathList = this.arr2.filter(item => this.sortTagDuration === 'def' || item.tagDuration === this.sortTagDuration);
+            } else {
+
+                this.$store.state.pathList = this.pathList;
+
+                this.arr1 = this.getPaths.filter(item => this.sortTagComplexity === 'def' || item.tagComplexity === this.sortTagComplexity);
+
+                this.arr2 = this.arr1.filter(item => this.sortTagCapacity === 'def' || item.tagCapacity === this.sortTagCapacity);
+
+                this.$store.state.pathList = this.arr2.filter(item => this.sortTagDuration === 'def' || item.tagDuration === this.sortTagDuration);
+            }
+        },
+
+        getPaths() {
+            return this.$store.state.pathList
+        },
+    },
 
     methods: {
-        addClass() {
-            this.isActive = !this.isActive;
-            return this.isActive
+        clearFilt() {
+            this.firstArr = [];
+            this.secondArr = [];
+            this.thirdArr = [];
+
+
+
+            this.isActive11 = false;
+            this.isActive12 = false;
+            this.isActive13 = false;
+
+            this.isActive21 = false;
+            this.isActive22 = false;
+            this.isActive23 = false;
+
+            this.isActive31 = false;
+            this.isActive32 = false;
+            this.isActive33 = false;
+
+            this.sortTagComplexity = 'def';
+            this.sortTagCapacity = 'def';
+            this.sortTagDuration = 'def';
+
+            this.$store.state.pathList = filtrItems();
+
+
+
+
+            // this.arr1 = this.getPaths.filter(item => this.sortTagComplexity === 'def' || item.tagComplexity === this.sortTagComplexity);
+
+            // this.arr2 = this.arr1.filter(item => this.sortTagCapacity === 'def' || item.tagCapacity === this.sortTagCapacity);
+
+            // this.$store.state.pathList = this.arr2.filter(item => this.sortTagDuration === 'def' || item.tagDuration === this.sortTagDuration);
+
+            // this.$store.state.pathList = this.pathList;
+
         },
+
         setRating: function (rating) {
             this.rating = "You have Selected: " + rating + " stars";
         },
@@ -188,26 +224,10 @@ export default {
             this.currentSelectedRating = "You have Selected: " + rating + " stars";
         },
 
-        togleCoplexity() {
-            if (this.isActive11 && this.isActive21 || this.isActive31) { 
-                this.isActive21 = !this.isActive11;
-                this.isActive31 = !this.isActive11
-            } else if (this.isActive21) { 
-                this.isActive11 = !this.isActive21;
-                this.isActive31 = !this.isActive21;
-            } else if (this.isActive31) { 
-                this.isActive21 = !this.isActive31;
-                this.isActive11 = !this.isActive31;
-            }
-        },
-
-        // ...mapMutations(["SET_PATHLIST"]),
-
-
         getPaths() {
             return this.$store.getters.getPath
-            // return this.pathList1
         },
+
         showComplexity() {
             this.complexityVisible = !this.complexityVisible;
             this.durationVisible = false;
@@ -232,145 +252,144 @@ export default {
     color: $btn_color
 }
 
-.item_img {
-    width: 390px;
-    height: 626px;
-    margin-top: 24px;
-}
-
-.rating_rating {
-    color: rgb(12, 54, 224);
-}
-
-.item_rating {
-    position: relative;
-    top: -120px;
-    right: -100px;
-}
-
-
-.path_name_container {
-    width: 252px;
-    height: 58px;
-    position: relative;
-    top: -273px;
-    left: 80px;
-
-}
-
-.path__card_name_name {
-
-    top: -230px;
-    left: 48px;
-    color: $textColorContrast;
-    // text-align: center;
-    font-family: Lack;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    transition: all .3s;
-}
-
-.path__card_name_img {
-    position: relative;
-    top: -200px;
-    left: 48px;
-    transition: all .3s;
-
-}
-
-.item_capacity {
-    width: 360px;
-    display: flex;
-    position: relative;
-    left: 18px;
-    top: -100px;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    transition: all .3s;
-
-    &_text {
-        color: rgb(0, 0, 0);
-        font-family: Lack;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-}
-
-.item_complexity {
-    width: 360px;
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    top: -100px;
-    left: 18px;
-    transition: all .3s;
-
-
-    &_text {
-        color: rgb(0, 0, 0);
-        font-family: Lack;
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-    }
-
-}
-
-
-
-.catalog__cards {
+.items_in_catalog {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.desctiption__btn {
-    position: relative;
-    top: -130px;
-    left: 40px;
+.filter__title_elem1 {
+    transition: all .3s;
 
-    &_elem {
-        color: $textColorLack;
-        font-family: Lack;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        display: flex;
-        width: 314px;
-        padding: 16px 65px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        border-radius: 60px;
-        border: 3px solid #000;
-        margin-top: 60px;
-        margin-bottom: 90px;
+    &:hover {
+        color: $btn_color;
+        transform: transition all .3s;
+        cursor: pointer;
+    }
+
+    &:active {
+        color: rgb(234, 119, 119);
     }
 }
 
-.catalog__catalog_item {
-    margin-left: 20px;
-    margin-right: 20px;
+
+// .path__card_name_name {
+//     top: -230px;
+//     left: 48px;
+//     color: $textColorContrast;
+//     // text-align: center;
+//     font-family: Lack;
+//     font-size: 24px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     text-transform: uppercase;
+//     transition: all .3s;
+// }
+
+// .path__card_name_img {
+//     position: relative;
+//     top: -200px;
+//     left: 48px;
+//     transition: all .3s;
+// }
+
+// .item_capacity {
+//     width: 360px;
+//     display: flex;
+//     position: relative;
+//     left: 18px;
+//     top: -100px;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     justify-content: space-between;
+//     transition: all .3s;
+
+//     &_text {
+//         color: rgb(0, 0, 0);
+//         font-family: Lack;
+//         font-size: 26px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//     }
+// }
+
+// .item_complexity {
+//     width: 360px;
+//     display: flex;
+//     position: relative;
+//     flex-direction: row;
+//     flex-wrap: nowrap;
+//     justify-content: space-between;
+//     top: -100px;
+//     left: 18px;
+//     transition: all .3s;
+
+
+//     &_text {
+//         color: rgb(0, 0, 0);
+//         font-family: Lack;
+//         font-size: 26px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+    // }
+
+// }
+
+
+
+// .catalog__cards {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     align-items: center;
+// }
+
+// .desctiption__btn {
+//     position: relative;
+//     top: -130px;
+//     left: 40px;
+
+//     &_elem {
+//         color: $textColorLack;
+//         font-family: Lack;
+//         font-size: 32px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: normal;
+//         display: flex;
+//         width: 314px;
+//         padding: 16px 65px;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 10px;
+//         border-radius: 60px;
+//         border: 3px solid #000;
+//         margin-top: 60px;
+//         margin-bottom: 90px;
+//     }
+// }
+
+// .catalog__catalog_item {
+//     margin-left: 20px;
+//     margin-right: 20px;
+// }
+
+.filter__title_elem2 {
+    margin-left: 8px;
 }
 
 .filter {
 
     display: flex;
     flex-direction: row;
-    width: 1389px;
-    height: 102px;
+    max-width: 1389px;
+    height: 60px;
     flex-shrink: 0;
     border-radius: 60px;
     border: 1px solid var(--btn_bg, #000);
@@ -379,6 +398,8 @@ export default {
     justify-content: space-between;
 
     &__title {
+        max-width: 380px;
+        display: flex;
         color: #989898;
         font-family: Lack;
         font-size: 22px;
@@ -387,6 +408,10 @@ export default {
         line-height: normal;
         text-transform: uppercase;
         padding-left: 45px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
 
@@ -424,10 +449,11 @@ export default {
 .no_filter {
     margin-right: 50px;
     margin-top: 16px;
-
+    cursor: pointer;
 
     &:hover path {
         fill: $btn_color;
+        transition: .3s;
     }
 
     &:active path {
@@ -459,16 +485,18 @@ export default {
 
 .tit_complexity {
     margin-left: 350px;
+    margin-top: -22px;
 }
 
 .tit_time {
-    //    position: absolute;
+       position: re;
     margin-left: 650px;
+    margin-top: -22px;
 
 }
 
 .tit_size {
-
+    margin-top: -22px;
     margin-left: 950px;
 }
 
@@ -476,6 +504,10 @@ export default {
     position: relative;
     top: -4px;
 
+
+}
+.activeDet{
+    color : $btn_color;
 
 }
 
@@ -526,123 +558,114 @@ export default {
 
 }
 
+// .hide__btn {
+//     color: $textColorLack;
+//     font-family: Lack;
+//     font-size: 32px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     display: flex;
+//     width: 220px;
+//     padding: 16px 65px;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 10px;
+//     border-radius: 60px;
+//     border: 3px solid #000;
+//     margin-top: 20px;
+//     margin-bottom: 20px;
+// }
 
+// .hide__btn_block {
+//     width: 1520px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+//     flex-wrap: nowrap;
+//     align-items: center;
+//     transition: width 2s;
+// }
 
+// .catalog-preview__catalog_item {
+//     border: 3px solid #000;
+//     border-top: 0;
+//     border-left: 0;
+//     border-right: 0;
+//     height: 820px;
+//     margin-bottom: 70px;
+//     margin-top: 170px;
+//     border-radius: 20px;
+//     transition: all .3s;
+//     z-index: 5;
+//     display: flex;
+//     // transform: transition all .3s ;
 
+// }
 
+// .catalog-preview__catalog_item:hover {
+//     border: 3px solid $btn_color;
+//     // border-top: 0;
+//     // border-left: 0;
+//     // border-right: 0;
+//     height: 820px;
+//     margin-bottom: 70px;
+//     margin-top: 70px;
+//     border-radius: 20px;
+//     transition-duration: .2s;
+//     width: 464px;
+//     position: relative;
+//     z-index: 10;
+//     transform: transition border .3s;
+//     margin-left: -24px;
+//     margin-right: -24px;
+// }
 
+// .catalog-preview__catalog_item:hover .path__card_name_img {
+//     position: relative;
+//     left: 0;
+//     transition-duration: .3s;
+//     // width: 486px;
 
+// }
 
+// img {
+//     transition: .3s;
+// }
 
+// .catalog-preview__catalog_item:hover .path__card_name_name {
+//     top: -230px;
+//     left: 48px;
+//     color: $textColorContrast;
 
+//     font-family: Lack;
 
-.hide__btn {
-    color: $textColorLack;
-    font-family: Lack;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    display: flex;
-    width: 220px;
-    padding: 16px 65px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 60px;
-    border: 3px solid #000;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//     text-transform: uppercase;
+//     transition-duration: .3s;
 
-.hide__btn_block {
-    width: 1520px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;
-    align-items: center;
-    transition: width 2s;
-}
+// }
 
-.catalog-preview__catalog_item {
-    border: 3px solid #000;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    height: 820px;
-    margin-bottom: 70px;
-    margin-top: 170px;
-    border-radius: 20px;
-    transition: all .3s;
-    z-index: 5;
-    // transform: transition all .3s ;
+// .catalog-preview__catalog_item:hover .path_name_container {
+//     width: 252px;
+//     height: 58px;
+//     position: relative;
+//     // top: -303px;
+//     // left: 160px;
+//     transition-duration: .3s;
+// }
 
-}
+// .catalog-preview__catalog_item:hover .item_capacity {
+//     width: 418px;
+//     transition-duration: .3s;
 
-.catalog-preview__catalog_item:hover {
-    border: 3px solid $btn_color;
-    // border-top: 0;
-    // border-left: 0;
-    // border-right: 0;
-    height: 820px;
-    margin-bottom: 70px;
-    margin-top: 70px;
-    border-radius: 20px;
-    transition-duration: .2s;
-    width: 464px;
-    position: relative;
-    z-index: 10;
-    transform: transition border .3s;
-    margin-left: -24px;
-    margin-right: -24px;
-}
+// }
 
-.catalog-preview__catalog_item:hover .path__card_name_img {
-    position: relative;
-    left: 0;
-    transition-duration: .3s;
-    // width: 486px;
+// .catalog-preview__catalog_item:hover .item_complexity {
+//     width: 418px;
+//     transition-duration: .3s;
 
-}
-
-img {
-    transition: .3s;
-}
-
-.catalog-preview__catalog_item:hover .path__card_name_name {
-    top: -230px;
-    left: 48px;
-    color: $textColorContrast;
-
-    font-family: Lack;
-
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    transition-duration: .3s;
-
-}
-
-.catalog-preview__catalog_item:hover .path_name_container {
-    width: 252px;
-    height: 58px;
-    position: relative;
-    // top: -303px;
-    // left: 160px;
-    transition-duration: .3s;
-}
-
-.catalog-preview__catalog_item:hover .item_capacity {
-    width: 418px;
-    transition-duration: .3s;
-
-}
-
-.catalog-preview__catalog_item:hover .item_complexity {
-    width: 418px;
-    transition-duration: .3s;
-
-}
+// }
 </style>

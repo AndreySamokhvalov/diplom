@@ -6,8 +6,10 @@
   </div>
 </template>
 
+< CatalogItem ></CatalogItem>
 
 <script>
+import CatalogItem from '@/components/CatalogItem.vue';
 import CaRousel from '@/components/CaRousel.vue';
 export default {
   name: 'about',
@@ -19,6 +21,7 @@ export default {
   },
   components: {
         CaRousel,
+        CatalogItem,
     },
 
   mounted() {
