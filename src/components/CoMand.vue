@@ -1,5 +1,5 @@
 <template>
-    <div class="comand center">
+    <div id="comand" class="comand center">
         <div class="comand__text">
             <h1 class="comand__text_title">наша команда</h1>
             <p class="comand__text_desk">Безопасность наших походов занимает первое место,

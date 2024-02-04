@@ -1,5 +1,5 @@
 <template>
-    <div class="banner crnter">
+    <div class="banner" >
 
         <transition-group tag="div" :name="transitionName" class="slides-group">
             <div v-if="show" :key="current" class="slide" :class="slides[current].className">
@@ -77,13 +77,17 @@
             </div>
         </transition-group>
         <div class="btn btn-prev" aria-label="Previous slide" @click="slide(-1)">
-            &#10094;
+            <img src="../assets/slide_l.svg" alt="rigth" >
         </div>
         <div class="btn btn-next" aria-label="Next slide" @click="slide(1)">
-            &#10095
+            <img src="../assets/slide_r.svg" alt="left" >
         </div>
     </div>
 </template>
+
+<!-- <img src="../assets/slide_l.svg" alt="rigth" >
+<img src="../assets/slide_r.svg" alt="left" > -->
+
 
 <script>
 export default {
@@ -129,6 +133,7 @@ export default {
     width: 100%;
     height: 100vh;
     position: relative;
+    z-index: 2;
 
 }
 
@@ -158,6 +163,7 @@ export default {
             font-weight: 700;
             line-height: normal;
             text-transform: uppercase;
+            top: 20px;
 
         }
     }
@@ -189,6 +195,7 @@ export default {
             display: flex;
             border-radius: 60px;
             background: #19A2DC;
+            margin-bottom: 120px;
 
             &_text {
                 color: $textColorContrast;
@@ -209,7 +216,7 @@ export default {
 
 .name_bord {
     position: relative;
-    top: -635px;
+    top: -730px;
     left: 570px;
     // z-index: 1;
 
@@ -224,7 +231,7 @@ export default {
 }
 
 .board3 {
-    top: -540px;
+    top: -640px;
     left: 318px;
 }
 
@@ -317,7 +324,7 @@ body {
 .btn {
     z-index: 10;
     cursor: pointer;
-    border: 3px solid #fff;
+    // border: 3px solid #fff;
     display: flex;
     justify-content: center;
     align-items: center;

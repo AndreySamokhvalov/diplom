@@ -1,5 +1,5 @@
 <template>
-    <div class="footer center_img">
+    <div id="footer" class="footer center_img">
         <div class="footer__promo">
             <div class="promo__text">
                 <span class="promo__text_elem">

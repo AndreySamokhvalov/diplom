@@ -2,6 +2,7 @@
   <div class="home">
 
     <!-- <FoRma msg="Заполни форму"/> -->
+    <HeAder /> 
     <BaNner />
     <MoNual />
     <CoMand />
@@ -24,15 +25,20 @@ import CatalogPreview from '@/components/CatalogPreview.vue';
 import FoOter from '@/components/FoOter.vue';
 import HeLper from '@/components/HeLper.vue';
 import BaNner from '@/components/BaNner.vue';
+import HeAder from '@/components/HeAder.vue';
 
 export default {
   data() {
     return {
-      hovered: false
+      hovered: false,
+      pos: 0,
     };
   },
   name: 'HomeView',
+
+
   components: {
+    
     // FoRma,
     MoNual,
     CoMand,
@@ -41,6 +47,7 @@ export default {
     HeLper,
     FoOter,
     BaNner,
+    HeAder,
     // FoRma,
   },
 

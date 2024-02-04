@@ -1,5 +1,5 @@
 <template>
-    <div class="advantages center_img">
+    <div id="advantages" class="advantages center_img">
         <h2 class="advantages__title">Почему мы?</h2>
         <div class="advantages__cards">
             <div class="advantages__cards_elem">

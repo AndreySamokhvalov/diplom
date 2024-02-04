@@ -13,15 +13,15 @@ router.get('/', async (req, res) => {
 
 //  новые запросы
 
-router.get('/pathList', async (req, res) => {
-   res.json(await ShowPaths.find());
-});
+// router.get('/pathList', async (req, res) => {
+//    res.json(await ShowPaths.find());
+// });
 
-router.post('/pathList', async (req, res) => {
-   const record1 = new ShowPaths(req.body);
-   await record1.save();
-   res.json({ state: 'success' });
-});
+// router.post('/pathList', async (req, res) => {
+//    const record1 = new ShowPaths(req.body);
+//    await record1.save();
+//    res.json({ state: 'success' });
+// });
 // ==============
 router.post('/', async (req, res) => {
    const record = new Record(req.body);
@@ -71,8 +71,10 @@ router.post('/', async (req, res) => {
       if (error) {
          return console.log(error);
 
-         console.log('Message sent: %s', info.messageId);
-         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+         console.log('Message sent: %s',
+          info.messageId);
+         console.log('Preview URL: %s',
+          nodemailer.getTestMessageUrl(info));
       }
    })
 

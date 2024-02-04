@@ -5,6 +5,7 @@ import store from './store'
 import StarRating from 'vue-star-rating'
 
 
+
 Vue.config.productionTip = false
 
 Vue.component('star-rating', StarRating);
