@@ -407,8 +407,8 @@ export default {
     border-left: 0;
     border-right: 0;
     height: 820px;
-    margin-bottom: 70px;
-    margin-top: 170px;
+    margin-bottom: 20px;
+    margin-top: 50px;
     border-radius: 20px;
     transition: all .3s;
     z-index: 5;
@@ -418,12 +418,8 @@ export default {
 
 .catalog-preview__catalog_item:hover {
     border: 3px solid $btn_color;
-    // border-top: 0;
-    // border-left: 0;
-    // border-right: 0;
-    height: 820px;
-    margin-bottom: 70px;
-    margin-top: 70px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 20px;
     transition-duration: .2s;
     width: 464px;

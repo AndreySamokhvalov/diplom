@@ -12,128 +12,13 @@
             </div>
         </div>
 
-<div class="catalog-preview__catalog">
-    <CaRousel />
-</div>
+        <div class="catalog-preview__catalog">
+            <CaRousel />
+        </div>
 
-
-        <!-- <div class="catalog-preview__catalog">
-
-            <div class="catalog-preview__catalog_item">
-                <img src="../assets/path1.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            Однодневная экспедиция
-                        </h4>
-                    </div>
-                </div>
-                <div class="item_rating">
-                    
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-               
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        12
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        3
-                    </span>
-                </div>
-
-
-            </div>
-
-            <div class="catalog-preview__catalog_item">
-                <img src="../assets/path2.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            многодневная экспедиция
-                        </h4>
-                    </div>
-                </div>
-                <div class="item_rating">
-                    
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-                
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        16
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        5
-                    </span>
-                </div>
-
-
-            </div>
-
-            <div class="catalog-preview__catalog_item">
-                <img src="../assets/path3.jpg" alt="paht1" class="item_img">
-                <div class="name_block">
-                    <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
-                    <div class="path_name_container">
-                        <h4 class="path__card_name_name">
-                            экспедиция на месяц
-                        </h4>
-                    </div>
-                </div>
-                <div class="item_rating">
-                    
-                    <h4 class="rating_rating">рейтинг</h4>
-                </div>
-                
-                <div class="item_capacity">
-                    <span class="item_capacity_text">
-                        вместимость группы:
-                    </span>
-                    <span class="item_capacity_int item_capacity_text">
-                        20
-                    </span>
-                </div>
-                <div class="item_complexity">
-                    <span class="item_complexity_text">
-                        сложность:
-                    </span>
-                    <span class="item_complexity_int item_complexity_text ">
-                        10
-                    </span>
-                </div>
-
-
-            </div>
-
-
+        <!-- <div class="select__btn">
+            <button class="select__btn_elem btns_config">Смотреть все</button>
         </div> -->
-
-
-
-
-
-        <div class="select__btn">
-        <button class="select__btn_elem btns_config">Смотреть все</button>
-    </div>
     </div>
 </template>
 
@@ -159,14 +44,15 @@ export default {
     components: {
         CaRousel,
     },
-  
+
 };
 </script>
 
 <style lang="scss" scoped>
-.catalog-preview{
+.catalog-preview {
     height: 1080px;
 }
+
 .catalog-preview__text_title {
     margin-top: 84px;
     margin-bottom: 24px;
@@ -290,11 +176,13 @@ export default {
     }
 
 }
-.select__btn{
+
+.select__btn {
     position: relative;
     left: 582px;
     top: - 180px;
 }
+
 .select__btn_elem {
     color: $textColorLack;
     font-family: Lack;
@@ -311,5 +199,4 @@ export default {
     border: 3px solid #000;
     margin-top: 60px;
     margin-bottom: 90px;
-}
-</style>
+}</style>

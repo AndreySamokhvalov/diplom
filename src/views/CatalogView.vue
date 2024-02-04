@@ -542,23 +542,27 @@ export default {
 .tit_complexity {
     margin-left: 350px;
     margin-top: -22px;
+    z-index: 20;
 }
 
 .tit_time {
-    position: re;
+
     margin-left: 650px;
     margin-top: -22px;
+    z-index: 20;
 
 }
 
 .tit_size {
     margin-top: -22px;
     margin-left: 950px;
+    z-index: 20;
 }
 
 .filter__heading {
     position: relative;
     top: -4px;
+
 
 
 }

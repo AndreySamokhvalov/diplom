@@ -2,9 +2,6 @@
     <div class="carousel center">
         <div class="inner" ref="inner" :style="innerStyles">
             <div class="card" v-for="card in getPaths()" :key="card">
-
-                <!-- <router-link to="/catalog"> -->
-
                 <div @click="toggleModal(), send(card)" class="catalog-preview__catalog_item">
                     <img :src=card.url alt="paht1" class="item_img">
                     <div class="name_block">
@@ -39,8 +36,6 @@
 
 
                 </div>
-                <!-- </router-link> -->
-
                 <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
             </div>
         </div>
@@ -215,8 +210,14 @@ export default {
     width: 390px;
     height: 626px;
     margin-left: 90px;
-
+    border: 3px solid white;
     display: inline-flex;
+    transition: border .3s;
+    &:hover{
+        border: 3px solid $btn_color;
+        border-radius: 12px;
+        transform: transition border .3s;
+    }
 
     /* optional */
 

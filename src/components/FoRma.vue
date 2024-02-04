@@ -13,15 +13,16 @@
       <form class="imput__form" @submit.prevent="sendData">
         <div class="form-control">
           <!-- <label for="name">Name</label> -->
-          <input class="form_input" v-model="name" placeholder="Ваше имя" id="name" type="text">
+          <input class="form_input" v-model="name" placeholder="Ваше имя" id="name" type="text" required>
         </div>
         <div class="form-control">
           <!-- <label for="email">Email</label> -->
-          <input class="form_input" v-model="email" id="email" placeholder="Ваш Email" type="email">
+          <input class="form_input" v-model="email" id="email" placeholder="Ваш Email" type="email" required>
         </div>
         <div class="form-control">
           <!-- <label for="address">Address</label> -->
-          <input class="form_input" v-model="address" id="address" placeholder="Ваш номер телефона" type="text">
+          <input class="form_input tel " v-model="address" id="address" placeholder="Ваш номер телефона" type="tel"
+            pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" required />
         </div>
         <div class="form-control gender">
           <!-- <label for="gender">Gender</label> -->
@@ -30,16 +31,21 @@
         </div>
         <!-- //==============================---------=============================== -->
         <div class="form-control">
-          <select class="form_input" v-model="path" id="path" type="text">
+          <select class="form_input selector_form" v-model="path" id="path" type="text" required>
             <option style="text-indent: 25px;" disabled value=""> Выберете вариант из предложенных</option>
-            <option for="path" v-for="option in gPath" :value="option.title">
+            <option>
+              Консультация
+            </option>
+            <option class="option" for="path" v-for="option in gPath" :value="option.title">
               {{ option.title }}
             </option>
+
           </select>
         </div>
 
-
-        <input type="submit" class="send" value="Send">
+        <div class="send_box">
+          <span сlass="send_box_text"><input type="submit" class="send" value="отправить заявку"></span>
+        </div>
       </form>
     </div>
   </div>
@@ -135,7 +141,8 @@ export default {
 .form-control {
   padding: 5px;
 
-  
+
+
 }
 
 .exit_button_elem {
@@ -150,6 +157,7 @@ export default {
   flex-wrap: nowrap;
   height: 480px;
   justify-content: space-evenly;
+
 }
 
 .form-control label {
@@ -161,11 +169,26 @@ export default {
   width: 574px;
   height: 50px;
   border-radius: 26px;
-  background-color: $btn_color;
+  background-color: white;
   margin-top: 12px;
   margin-bottom: 12px;
-
+  color: rgb(137, 137, 138);
+  text-align: center;
+  font-family: Lack;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  transition: all .3s;
+  &:hover{
+    background-color: $btn_color;
+    color: $textColorContrast;
+    transform: transition all .3s;
+  } 
 }
+
+.send_box_text {}
 
 .prevue {
   height: 20px;
@@ -227,16 +250,36 @@ span {
   border-radius: 26px;
   padding-left: 16px;
   box-sizing: border-box;
-
   color: $textColorLack;
-  // text-align: center;
   font-family: Lack;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  
+
 }
+
+input {
+  outline: none;
+}
+
+input:required {
+  border: 2px solid rgb(234, 119, 119);
+}
+
+input:valid {
+  border: 2px solid $btn_color;
+  // background-color: $btn_color;
+}
+
+input:invalid {
+  border: 2px solid rgb(92, 92, 92);
+}
+
+.selector_form {
+  border: 2px solid rgb(92, 92, 92);
+}
+
 
 .option {}
 </style>

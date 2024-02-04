@@ -22,10 +22,11 @@
 </template>
   
 <style lang="scss" scoped >
-.modal-content{
+.modal-content {
   -webkit-animation-name: slideIn;
-    -webkit-animation-duration: 1s;
+  -webkit-animation-duration: 1s;
 }
+
 .modal {
   display: flex;
   -webkit-animation-name: fadeIn;
@@ -92,7 +93,8 @@
     top: 10px;
     z-index: 6;
     fill: var(--txt_white, #FFF);
-opacity: 0.5;
+    opacity: 0.5;
+    // transition: all .3s;
 
     &:hover {
       width: 85px;
@@ -100,6 +102,7 @@ opacity: 0.5;
       top: -5px;
       //  компенмация увеличения
       margin-bottom: -25px;
+      // transform: transition all .3s;
 
     }
 
