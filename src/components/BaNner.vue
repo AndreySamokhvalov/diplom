@@ -5,7 +5,7 @@
             <div v-if="show" :key="current" class="slide" :class="slides[current].className">
                 <div v-show="slides[current].className == 'banner1'" class="banner__show_first">
                     <div class="banner__show_first_title">
-                        <h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?</h1>
+                        <a href="http://localhost:8080/catalog" class=""><h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?</h1></a>
                     </div>
                     <div class="banner__show_first_desk">
                         <p class="banner__show_first_desk_elem">многодневные экспедиции, пешие однодневные походы и прогулки

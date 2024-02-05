@@ -1,5 +1,5 @@
 <template>
-  <div class="form-backdrop center" @click=closeForm()>
+  <div id="forma" class="form-backdrop center" @click=closeForm()>
     <!-- <div class="exit_button" @click=closeForm()>
         <img src="../assets/close.svg" alt="close" class="exit_button_elem">
       </div> -->
@@ -118,6 +118,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .form {
@@ -134,6 +135,7 @@ export default {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-around;
+  z-index: 100;
 }
 
 

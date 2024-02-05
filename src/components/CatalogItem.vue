@@ -1,10 +1,9 @@
 <template>
     <div class="catalog__cards">
 
-
-        <div class="catalog-preview__catalog_item">
+        
+        <div class="catalog-preview__catalog_item" @click="toggleModal(), send(itemData)">
             <!-- <h1>привет</h1> -->
-
             <img :src=itemData.url alt="paht1" class="item_img">
             <div class="name_block">
                 <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
@@ -35,22 +34,38 @@
                 <span class="item_complexity_int item_complexity_text ">
                     {{ itemData.lvl }}
                 </span>
+                
+       
             </div>
 
 
 
         </div>
+        <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
+        
     </div>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
 export default {
     name: 'CatalogItem',
     props: ['itemData'],
     data() {
         return {
+            isShowModal: false,
+            test: {
+                title: "",
+                description: "",
+                url: "",
+                capacity: "",
+                lvl: "",
 
-        };
+            },
+        }
+    },
+    components: {
+        Modal,
     },
 
 
@@ -59,6 +74,30 @@ export default {
     },
 
     methods: {
+
+        send(item) {
+            this.test.title = item.title;
+            this.test.description = item.description;
+            this.test.url = item.url;
+            this.test.capacity = item.capacity;
+            this.test.lvl = item.lvl;
+            
+           
+
+        },
+        getPathsInfo() {
+            return this.test
+        },
+
+
+        toggleModal() {
+            this.isShowModal = !this.isShowModal;
+        },
+        getPaths() {
+            return this.$store.getters.getPath
+        },
+
+
 
     },
 };
@@ -480,6 +519,224 @@ img {
 </style>
 
 <!-- <style lang="scss" scoped>
+
+.catalog__item{
+
+}
+
+.item_img {
+    width: 390px;
+    height: 626px;
+    margin-top: 24px;
+}
+
+.rating_rating {
+    color: rgb(12, 54, 224);
+}
+
+.item_rating {
+    position: relative;
+    top: -120px;
+    right: -100px;
+}
+
+
+.path_name_container {
+    width: 252px;
+    height: 58px;
+    position: relative;
+    top: -273px;
+    left: 80px;
+
+}
+
+.path__card_name_name {
+
+    top: -230px;
+    left: 48px;
+    color: $textColorContrast;
+    // text-align: center;
+    font-family: Lack;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+
+.path__card_name_img {
+    position: relative;
+    top: -200px;
+    left: 48px;
+    transition: all .3s;
+
+}
+
+.item_capacity {
+    width: 360px;
+    display: flex;
+    position: relative;
+    left: 18px;
+    top: -100px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    transition: all .3s;
+
+    &_text {
+        color: rgb(0, 0, 0);
+        font-family: Lack;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+}
+
+.item_complexity {
+    width: 360px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    top: -100px;
+    left: 18px;
+    transition: all .3s;
+
+
+    &_text {
+        color: rgb(0, 0, 0);
+        font-family: Lack;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+}
+
+
+
+.catalog__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.desctiption__btn {
+    position: relative;
+    top: -130px;
+    left: 40px;
+
+    &_elem {
+        color: $textColorLack;
+        font-family: Lack;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        width: 314px;
+        padding: 16px 65px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 60px;
+        border: 3px solid #000;
+        margin-top: 60px;
+        margin-bottom: 90px;
+    }
+}
+
+.catalog__catalog_item {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.catalog-preview__catalog_item {
+    border: 3px solid #000;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    height: 820px;
+    margin-bottom: 70px;
+    margin-top: 170px;
+    border-radius: 20px;
+    transition: all .3s;
+    z-index: 5;
+    // transform: transition all .3s ;
+
+}
+
+.catalog-preview__catalog_item:hover {
+    border: 3px solid $btn_color;
+    // border-top: 0;
+    // border-left: 0;
+    // border-right: 0;
+    height: 820px;
+    margin-bottom: 70px;
+    margin-top: 70px;
+    border-radius: 20px;
+    transition-duration: .2s;
+    width: 464px;
+    position: relative;
+    z-index: 10;
+    transform: transition border .3s;
+    margin-left: -24px;
+    margin-right: -24px;
+}
+
+.catalog-preview__catalog_item:hover .path__card_name_img {
+    position: relative;
+    left: 0;
+    transition-duration: .3s;
+    // width: 486px;
+
+}
+
+img {
+    transition: .3s;
+}
+
+.catalog-preview__catalog_item:hover .path__card_name_name {
+    top: -230px;
+    left: 48px;
+    color: $textColorContrast;
+
+    font-family: Lack;
+
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    transition-duration: .3s;
+
+}
+
+.catalog-preview__catalog_item:hover .path_name_container {
+    width: 252px;
+    height: 58px;
+    position: relative;
+    // top: -303px;
+    // left: 160px;
+    transition-duration: .3s;
+}
+
+.catalog-preview__catalog_item:hover .item_capacity {
+    width: 418px;
+    transition-duration: .3s;
+
+}
+
+.catalog-preview__catalog_item:hover .item_complexity {
+    width: 418px;
+    transition-duration: .3s;
+
+}
+</style> -->
 
 .catalog__item{
 

@@ -41,7 +41,7 @@ $widthBanner: 1920px;
   }
   // пример активной кнопки
   &:active{
-    background-color: rgb(231, 49, 49);
+    background-color: #83cdec;
     border: 3px solid #ffffff;
   }
 }
@@ -67,3 +67,5 @@ $textColorLack: black;
 $textColorContrast: rgb(255, 255, 255);
 // неактивный цвеь
 $textColorNoHovere: #77878e;
+//  цвет хедера
+$headerColor: #35363a;

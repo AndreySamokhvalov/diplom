@@ -128,6 +128,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+    margin-top: 60px;
     background-image: url("../assets/footer_ph.jpg");
     display: flex;
     background-position: center center;

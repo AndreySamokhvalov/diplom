@@ -1,8 +1,10 @@
 <template>
     <div class="carousel center">
+        
         <div class="inner" ref="inner" :style="innerStyles">
+            
             <div class="card" v-for="card in getPaths()" :key="card">
-                <div @click="toggleModal(), send(card)" class="catalog-preview__catalog_item">
+                <div @click="toggleModal(), send(card), show()" class="catalog-preview__catalog_item">
                     <img :src=card.url alt="paht1" class="item_img">
                     <div class="name_block">
                         <img src="../assets/nameBlock.svg" alt="--" class="path__card_name_img">
@@ -36,28 +38,32 @@
 
 
                 </div>
-                <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
+                
+                <!-- <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" /> -->
             </div>
+            
         </div>
+        
         <div class="btn_group">
             <!-- убираю стрелочки из модального окна с помощью v-show -->
-            <img @click="prev" v-show="!isShowModal" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
-            <img @click="next" v-show="!isShowModal" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
+            <img @click="prev"  src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
+            <img @click="next"  src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
         </div>
-
+        <FoRma v-show=visible @close="show()" />
         
 
     </div>
 </template>
   
 <script>
-import Modal from '@/components/Modal.vue';
+import FoRma from '@/components/FoRma.vue';
 export default {
     name: 'CaRousel',
 
     data() {
 
         return {
+            visible: false,
             isShowModal: false,
             test: {
                 title: "",
@@ -71,7 +77,7 @@ export default {
         }
     },
     components: {
-        Modal,
+        FoRma,
     },
 
     mounted() {
@@ -80,6 +86,9 @@ export default {
     },
 
     methods: {
+        show() {
+            this.visible = !this.visible
+        },
         send(item) {
             this.test.title = item.title;
             this.test.description = item.description;
@@ -205,7 +214,11 @@ export default {
         left: 700px;
     }
 }
+.in__catalog{
+    width: 390px;
+    height: 626px;
 
+}
 .card {
     width: 390px;
     height: 626px;

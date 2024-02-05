@@ -10,7 +10,7 @@
             <a href="http://localhost:8080/" class=""><img src="../assets/logo.svg" alt="logo" class="header__logo_elem"></a>
         </div>
         <div class="header__catalog">
-            <a href="http://localhost:8080/catalog" class=""><h3 class="header__catalog_elem header__links">ПОХОДЫ</h3></a>
+            <a href="http://localhost:8080/catalog" class=""><h3 class="header__catalog_elem header__links">НАШИ ПОХОДЫ</h3></a>
         </div>
         <div class="header__contacts">
            <a href="#footer" class=""><h3 class="header__contacts_elem header__links">КОНТАКТЫ</h3></a> 
@@ -76,7 +76,7 @@ export default {
         }
 
         &:active {
-            color: rgb(18, 18, 248);
+            color: rgb(162, 201, 223);
         }
     }
 

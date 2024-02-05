@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+   <div class="">
 
         <div id="catalog" class="catalog center">
             <div class="header center">
@@ -18,8 +18,8 @@
                             class="header__logo_elem"></a>
                 </div>
                 <div class="header__catalog">
-                    <a href="http://localhost:8080/catalog" class="">
-                        <h3 class="header__catalog_elem header__links">ПОХОДЫ</h3>
+                    <a href="http://localhost:8080/" class="">
+                        <h3 class="header__catalog_elem header__links">ГЛАВНАЯ</h3>
                     </a>
                 </div>
                 <div class="header__contacts">
@@ -35,7 +35,7 @@
                     <div class="board__search">
                         <h3 class="filter__title_elem1" @click="filtrItems()">подобрать</h3>
                     </div>
-                    <h3 class="filter__title_elem2">маршрут по:</h3>
+                    <!-- <h3 class="filter__title_elem2">маршрут по:</h3> -->
                 </div>
                 <details class="filter__elem tit_complexity">
                     <summary class="filter__summary"><span :class="{ 'activeDet': isActive12 || isActive11 || isActive13 }"
@@ -123,14 +123,19 @@
 
             <div class="items_in_catalog">
                 <CatalogItem class="catalog__comp" v-for="item in getPaths" :item-data="item" :key="item.id"></CatalogItem>
+                
             </div>
+        
         </div>
+        <FoOter />
     </div>
+    
 </template>
 
 <script>
 import CatalogItem from '@/components/CatalogItem.vue';
 import HeAder from '@/components/HeAder.vue';
+import FoOter from '@/components/FoOter.vue';
 export default {
     name: 'Catalog',
 
@@ -175,6 +180,7 @@ export default {
     components: {
         CatalogItem,
         HeAder,
+        FoOter,
     },
     computed: {
         filtrItems() {
