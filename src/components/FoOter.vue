@@ -135,7 +135,7 @@ export default {
     background-size: cover;
     background-attachment: local;
     background-clip: content-box;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     justify-content: space-around;
     height: 300px;
     align-items: center;
@@ -171,7 +171,8 @@ export default {
         line-height: normal;
     }
 }
-.promo__phone{
+
+.promo__phone {
     text-align: center;
 
 }
@@ -201,7 +202,7 @@ export default {
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        text-align:center;
+        text-align: center;
     }
 }
 
@@ -264,5 +265,56 @@ export default {
     &:hover path {
         fill: $btn_color;
         stroke: $btn_color;
+    }
+}
+
+@media (max-width: 1020px) and (min-width: 766px) {
+    .footer {
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .promo__text_elem {
+        font-size: 14px;
+    }
+
+    .promo__phone_elem {
+        font-size: 14px;
+        margin-top: 18px;
+    }
+
+    .promo__address_elem {
+        margin-left: 12px;
+        font-size: 14px;
+    }
+
+    .info_desk_text {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .footer {
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .promo__text_elem {
+        font-size: 16px;
+    }
+
+    .promo__phone_elem {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    .promo__address_elem {
+        margin-left: 12px;
+        font-size: 16px;
+    }
+
+    .info_desk_text {
+        font-size: 16px;
     }
 }</style>

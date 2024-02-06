@@ -1,11 +1,14 @@
 <template>
-    <div class="banner" >
+    <div class="banner">
 
         <transition-group tag="div" :name="transitionName" class="slides-group">
             <div v-if="show" :key="current" class="slide" :class="slides[current].className">
                 <div v-show="slides[current].className == 'banner1'" class="banner__show_first">
                     <div class="banner__show_first_title">
-                        <a href="http://localhost:8080/catalog" class=""><h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?</h1></a>
+                        <a href="http://localhost:8080/catalog" class="">
+                            <h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?
+                            </h1>
+                        </a>
                     </div>
                     <div class="banner__show_first_desk">
                         <p class="banner__show_first_desk_elem">многодневные экспедиции, пешие однодневные походы и прогулки
@@ -77,10 +80,10 @@
             </div>
         </transition-group>
         <div class="btn btn-prev" aria-label="Previous slide" @click="slide(-1)">
-            <img src="../assets/slide_l.svg" alt="rigth" >
+            <img src="../assets/slide_l.svg" alt="rigth">
         </div>
         <div class="btn btn-next" aria-label="Next slide" @click="slide(1)">
-            <img src="../assets/slide_r.svg" alt="left" >
+            <img src="../assets/slide_r.svg" alt="left">
         </div>
     </div>
 </template>
@@ -344,4 +347,38 @@ body {
 
 .btn:hover {
     transform: scale(1.1);
-}</style>
+}
+
+@media (max-width: 1020px) and (min-width: 766px) {
+
+    .banner__show_first_title_elem {
+        font-size: 50px;
+    }
+
+    .name_bord {
+        display: none;
+    }
+
+    .banner__show_first_btn_elem {
+        margin-bottom: 214px;
+
+    }
+}
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .banner__show_first_title_elem {
+        font-size: 46px;
+    }
+    .banner__show_first_desk_elem {
+        font-size: 20px;
+    }
+
+    .name_bord {
+        display: none;
+    }
+
+    .banner__show_first_btn_elem {
+        margin-bottom: 214px;
+
+    }
+}
+</style>

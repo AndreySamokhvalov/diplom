@@ -199,4 +199,15 @@ export default {
     border: 3px solid #000;
     margin-top: 60px;
     margin-bottom: 90px;
-}</style>
+}
+@media (max-width: 1020px) and (min-width: 768px) {
+    .catalog-preview{
+        display: none;
+    }
+}
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .catalog-preview{
+        display: none;
+    }
+}
+</style>

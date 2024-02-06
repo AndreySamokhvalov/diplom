@@ -87,4 +87,14 @@ export default {
         }
     }
 }
+@media (max-width: 1020px) and (min-width: 766px) {
+    .header{
+       width: 640px; 
+    }
+}
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .header{
+       width: 875px; 
+    }
+}
 </style>

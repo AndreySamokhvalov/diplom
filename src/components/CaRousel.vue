@@ -353,5 +353,11 @@ button {
 
 
 }
+// @media (max-width: 1020px) and (min-width: 768px) {
+//     .carousel{
+//         display: none;
+//     }
+  
+// }
 </style>
   

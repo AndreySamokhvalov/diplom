@@ -1,5 +1,5 @@
 <template>
-   <div class="">
+    <div class="">
 
         <div id="catalog" class="catalog center">
             <div class="header center">
@@ -90,7 +90,7 @@
 
                 <details class="filter__elem tit_size">
                     <summary class="filter__summary"><span :class="{ 'activeDet': isActive32 || isActive31 || isActive33 }"
-                            class="filter__heading capas">РАЗМЕР ГРУППЫ</span><svg class="filter__triangle"
+                            class="filter__heading capas">ГРУППА</span><svg class="filter__triangle"
                             xmlns="http://www.w3.org/2000/svg" width="10" height="16" viewBox="0 0 10 16">
                             <path
                                 d="M9.6747 7.29777C9.6627 7.28777 9.6467 7.28377 9.6347 7.27377L1.9207 0.291766C1.4867 -0.0982338 0.782701 -0.0982338 0.348701 0.291766C0.344701 0.295766 0.342702 0.299765 0.340702 0.303765C0.235613 0.390536 0.150739 0.499209 0.0920124 0.62219C0.0332859 0.74517 0.00212329 0.87949 0.000701904 1.01577V14.9818C0.00294433 15.1205 0.0356314 15.2571 0.0964546 15.3819C0.157278 15.5066 0.244754 15.6165 0.352702 15.7038L0.348701 15.7078C0.567073 15.8965 0.846069 16.0004 1.1347 16.0004C1.42333 16.0004 1.70233 15.8965 1.9207 15.7078L9.6747 8.70977C9.77682 8.62265 9.85883 8.51441 9.91506 8.39252C9.97129 8.27063 10.0004 8.138 10.0004 8.00377C10.0004 7.86953 9.97129 7.7369 9.91506 7.61501C9.85883 7.49312 9.77682 7.38489 9.6747 7.29777Z"
@@ -123,13 +123,12 @@
 
             <div class="items_in_catalog">
                 <CatalogItem class="catalog__comp" v-for="item in getPaths" :item-data="item" :key="item.id"></CatalogItem>
-                
+
             </div>
-        
+
         </div>
         <FoOter />
     </div>
-    
 </template>
 
 <script>
@@ -275,7 +274,7 @@ export default {
     margin-top: 12px;
     display: flex;
     flex-direction: row;
-    width: 1520px;
+    max-width: 1520px;
     height: 60px;
     background-color: #35363a;
 
@@ -344,110 +343,7 @@ export default {
 }
 
 
-// .path__card_name_name {
-//     top: -230px;
-//     left: 48px;
-//     color: $textColorContrast;
-//     // text-align: center;
-//     font-family: Lack;
-//     font-size: 24px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: normal;
-//     text-transform: uppercase;
-//     transition: all .3s;
-// }
 
-// .path__card_name_img {
-//     position: relative;
-//     top: -200px;
-//     left: 48px;
-//     transition: all .3s;
-// }
-
-// .item_capacity {
-//     width: 360px;
-//     display: flex;
-//     position: relative;
-//     left: 18px;
-//     top: -100px;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     justify-content: space-between;
-//     transition: all .3s;
-
-//     &_text {
-//         color: rgb(0, 0, 0);
-//         font-family: Lack;
-//         font-size: 26px;
-//         font-style: normal;
-//         font-weight: 400;
-//         line-height: normal;
-//     }
-// }
-
-// .item_complexity {
-//     width: 360px;
-//     display: flex;
-//     position: relative;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     justify-content: space-between;
-//     top: -100px;
-//     left: 18px;
-//     transition: all .3s;
-
-
-//     &_text {
-//         color: rgb(0, 0, 0);
-//         font-family: Lack;
-//         font-size: 26px;
-//         font-style: normal;
-//         font-weight: 400;
-//         line-height: normal;
-// }
-
-// }
-
-
-
-// .catalog__cards {
-//     display: flex;
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     align-items: center;
-// }
-
-// .desctiption__btn {
-//     position: relative;
-//     top: -130px;
-//     left: 40px;
-
-//     &_elem {
-//         color: $textColorLack;
-//         font-family: Lack;
-//         font-size: 32px;
-//         font-style: normal;
-//         font-weight: 400;
-//         line-height: normal;
-//         display: flex;
-//         width: 314px;
-//         padding: 16px 65px;
-//         justify-content: center;
-//         align-items: center;
-//         gap: 10px;
-//         border-radius: 60px;
-//         border: 3px solid #000;
-//         margin-top: 60px;
-//         margin-bottom: 90px;
-//     }
-// }
-
-// .catalog__catalog_item {
-//     margin-left: 20px;
-//     margin-right: 20px;
-// }
 
 .filter__title_elem2 {
     margin-left: 8px;
@@ -491,7 +387,7 @@ export default {
     }
 
     &__elem {
-        width: 190px;
+        width: 170px;
         height: 240px;
         box-sizing: border-box;
         position: absolute;
@@ -625,114 +521,122 @@ export default {
 
 }
 
-// .hide__btn {
-//     color: $textColorLack;
-//     font-family: Lack;
-//     font-size: 32px;
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: normal;
-//     display: flex;
-//     width: 220px;
-//     padding: 16px 65px;
-//     justify-content: center;
-//     align-items: center;
-//     gap: 10px;
-//     border-radius: 60px;
-//     border: 3px solid #000;
-//     margin-top: 20px;
-//     margin-bottom: 20px;
-// }
+@media (max-width: 767px) and (min-width: 420px) {
+    .catalog {
+        overflow: hidden;
+    }
 
-// .hide__btn_block {
-//     width: 1520px;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-evenly;
-//     flex-wrap: nowrap;
-//     align-items: center;
-//     transition: width 2s;
-// }
+    .header__links {
+        font-size: 10px;
 
-// .catalog-preview__catalog_item {
-//     border: 3px solid #000;
-//     border-top: 0;
-//     border-left: 0;
-//     border-right: 0;
-//     height: 820px;
-//     margin-bottom: 70px;
-//     margin-top: 170px;
-//     border-radius: 20px;
-//     transition: all .3s;
-//     z-index: 5;
-//     display: flex;
-//     // transform: transition all .3s ;
+    }
 
-// }
+    .tit_time {
+        // top: 120px;
+        margin-left: 40px;
+        font-size: 12px;
+    }
 
-// .catalog-preview__catalog_item:hover {
-//     border: 3px solid $btn_color;
-//     // border-top: 0;
-//     // border-left: 0;
-//     // border-right: 0;
-//     height: 820px;
-//     margin-bottom: 70px;
-//     margin-top: 70px;
-//     border-radius: 20px;
-//     transition-duration: .2s;
-//     width: 464px;
-//     position: relative;
-//     z-index: 10;
-//     transform: transition border .3s;
-//     margin-left: -24px;
-//     margin-right: -24px;
-// }
+    .tit_complexity {
+        margin-left: -100px;
+        font-size: 12px;
+    }
 
-// .catalog-preview__catalog_item:hover .path__card_name_img {
-//     position: relative;
-//     left: 0;
-//     transition-duration: .3s;
-//     // width: 486px;
 
-// }
+    .tit_size {
+        font-size: 12px;
+        margin-left: 180px;
 
-// img {
-//     transition: .3s;
-// }
+    }
 
-// .catalog-preview__catalog_item:hover .path__card_name_name {
-//     top: -230px;
-//     left: 48px;
-//     color: $textColorContrast;
+    .filter {
 
-//     font-family: Lack;
+        flex-direction: column;
+        height: auto;
 
-//     font-style: normal;
-//     font-weight: 400;
-//     line-height: normal;
-//     text-transform: uppercase;
-//     transition-duration: .3s;
+        &__elem {
+            width: 128px;
+        }
+    }
 
-// }
+    .filter__optional_name {
+        font-size: 12px;
+    }
 
-// .catalog-preview__catalog_item:hover .path_name_container {
-//     width: 252px;
-//     height: 58px;
-//     position: relative;
-//     // top: -303px;
-//     // left: 160px;
-//     transition-duration: .3s;
-// }
+    .filter__title_elem1 {
+        font-size: 12px;
+        margin-left: -30px;
+    }
 
-// .catalog-preview__catalog_item:hover .item_capacity {
-//     width: 418px;
-//     transition-duration: .3s;
+}
 
-// }
+//  планшет 
+@media (max-width: 1020px) and (min-width: 768px) {
+    .filter__title_elem1 {
+        font-size: 22px;
+        margin-left: -20px;
+    }
+    .tit_complexity {
+        font-size: 12px;
+        margin-left: 100px;
+    }
+    .filter__optional_name {
+        font-size: 12px;
+    }
+    
 
-// .catalog-preview__catalog_item:hover .item_complexity {
-//     width: 418px;
-//     transition-duration: .3s;
+    .tit_time {
+        font-size: 12px;
+        margin-left: 250px;
+    }
 
-// }
-</style>
+    .tit_size {
+        font-size: 12px;
+        margin-left: 400px;
+
+    }
+
+    .filter {
+
+        // flex-direction: column;
+        // height: auto;
+
+        &__elem {
+            padding-bottom: 20px;
+            width: 140px;
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .tit_complexity {
+        margin-left: 150px;
+    }
+
+    .tit_time {
+        margin-left: 350px;
+    }
+
+    .tit_size {
+
+        margin-left: 590px;
+
+    }
+
+
+}
+
+@media (max-width: 1441px)and (min-width: 1041px) {
+    .filter {
+        margin-left: 32px;
+    }
+
+    .header {
+        margin-left: 32px;
+    }
+
+    .footer {
+        margin-left: 32px;
+    }
+}</style>

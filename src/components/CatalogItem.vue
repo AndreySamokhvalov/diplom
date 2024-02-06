@@ -1,7 +1,7 @@
 <template>
     <div class="catalog__cards">
 
-        
+
         <div class="catalog-preview__catalog_item" @click="toggleModal(), send(itemData)">
             <!-- <h1>привет</h1> -->
             <img :src=itemData.url alt="paht1" class="item_img">
@@ -34,15 +34,15 @@
                 <span class="item_complexity_int item_complexity_text ">
                     {{ itemData.lvl }}
                 </span>
-                
-       
+
+
             </div>
 
 
 
         </div>
         <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" />
-        
+
     </div>
 </template>
 
@@ -81,8 +81,8 @@ export default {
             this.test.url = item.url;
             this.test.capacity = item.capacity;
             this.test.lvl = item.lvl;
-            
-           
+
+
 
         },
         getPathsInfo() {
@@ -515,6 +515,30 @@ img {
     width: 418px;
     transition-duration: .3s;
 
+}
+
+@media (max-width: 767px) and (min-width: 420px) {
+    .catalog-preview__catalog_item {
+        // width: 300PX;
+        // height: auto;
+    }
+
+    .path__card_name_img {
+        left: 0;
+    }
+
+    .catalog-preview__catalog_item:hover .item_capacity {
+        width: 400px;
+        transition-duration: .3s;
+        padding-left: 18px;
+    }
+
+    .catalog-preview__catalog_item:hover .item_complexity {
+        width: 400px;
+        transition-duration: .3s;
+        padding-left: 18px;
+
+    }
 }
 </style>
 

@@ -77,13 +77,14 @@
                             </svg></a>
                     </div>
                     <div class="comand__card_text_desc">
-                        <p class="comand__card_text_desc_text">Количество пройденных экспедиций - более 30, также Жанна занимается  подъемами в горы и учится 
-                                                                в медицинском вузе.</p>
+                        <p class="comand__card_text_desc_text">Количество пройденных экспедиций - более 30, также Жанна
+                            занимается подъемами в горы и учится
+                            в медицинском вузе.</p>
                     </div>
 
                 </div>
             </div>
-            <div class="comand__card">
+            <div class="comand__card comand__card_invise">
                 <img src="../assets/photo_instructor3.jpg" alt="gid" class="comand__card_img">
                 <img src="../assets/name_couch3.svg" alt="" class="comand__card_name_img">
                 <div class="skill">
@@ -114,8 +115,9 @@
                             </svg></a>
                     </div>
                     <div class="comand__card_text_desc">
-                        <p class="comand__card_text_desc_text">Количество пройденных экспедиций - более 25, также Мария преподает 
-                                                               верховую езду и помогает животным.</p>
+                        <p class="comand__card_text_desc_text">Количество пройденных экспедиций - более 25, также Мария
+                            преподает
+                            верховую езду и помогает животным.</p>
                     </div>
 
                 </div>
@@ -293,4 +295,44 @@ export default {
     font-weight: 400;
     line-height: normal;
 }
+
+
+
+@media (max-width: 1020px) and (min-width: 766px) {
+    .comand__cards {
+        flex-direction: column;
+    }
+
+    .comand__text_title {
+        width: 640px;
+        font-size: 32px;
+    }
+
+    .comand__text_desk {
+        width: 640px;
+        height: auto;
+        font-size: 20px;
+    }
+}
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .comand__cards {
+        // flex-direction: column;
+    }
+    .comand__card_invise{
+        display: none;
+    }
+
+    .comand__text_title {
+        width: 640px;
+        font-size: 40px;
+    }
+
+    .comand__text_desk {
+        width: 600px;
+        height: auto;
+        font-size: 26px;
+    }
+}
+
+
 </style>

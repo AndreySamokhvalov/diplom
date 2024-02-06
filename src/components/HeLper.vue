@@ -64,6 +64,7 @@ export default {
 
 .helper__text_title {
     display: flex;
+    flex-direction: column;
 
     &_elem {
         color: $textColorDisplay;
@@ -119,4 +120,21 @@ export default {
         margin-bottom: 90px;
     }
 }
+@media (max-width: 1020px) and (min-width: 766px) {
+    .helper__text_title_elem{
+        font-size: 32px;
+    }
+    .helper__text_desk_elem{
+        font-size: 20px;
+    }
+}
+@media (max-width: 1040px)and (min-width: 1021px) {
+    .helper__text_title_elem{
+        font-size: 40px;
+    }
+    .helper__text_desk_elem{
+        font-size: 26px;
+    }
+}
+
 </style>

@@ -240,6 +240,23 @@
   margin-top: 60px;
   margin-bottom: 90px;
 }
+@media (max-width: 1020px) and (min-width: 766px) {
+  .modal-content{
+    overflow: hidden;
+  height: 620px;
+}
+.modal__btn{
+  width: 320px;
+  margin-top: 20px;
+}
+.modal-body {
+  padding-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  height: auto;
+  margin-left: 24px;
+}
+}
 </style>
 
 <script>
