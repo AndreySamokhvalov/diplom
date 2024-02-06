@@ -210,4 +210,26 @@ export default {
     padding-left: 12px;
     padding-right: 12px;
 }
+@media (max-width: 767px) and (min-width: 420px) {
+  .advantages__title{
+    font-size: 32px;
+  }  
+.advantages__cards_elem{
+    width: 350px;
+    height: 320px;
+}
+  .advantages__cards_elem_desk_text{
+    font-size: 22px;
+  }
+  .advantages__cards_elem_title {
+   
+    margin-left: 60px;
+    margin-top: 45px;
+  
+    width: 340px;
+    height: 45px;
+  
+
+}
+}
 </style>

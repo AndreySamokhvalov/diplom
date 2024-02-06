@@ -32,7 +32,7 @@
         <!-- //==============================---------=============================== -->
         <div class="form-control">
           <select class="form_input selector_form" v-model="path" id="path" type="text" required>
-            <option style="text-indent: 25px;" disabled value=""> Выберете вариант из предложенных</option>
+            <option style="text-indent: 25px;" disabled value=""> Выберете вариант</option>
             <option>
               Консультация
             </option>
@@ -183,11 +183,12 @@ export default {
   line-height: normal;
   text-transform: uppercase;
   transition: all .3s;
-  &:hover{
+
+  &:hover {
     background-color: $btn_color;
     color: $textColorContrast;
     transform: transition all .3s;
-  } 
+  }
 }
 
 .send_box_text {}
@@ -283,5 +284,29 @@ input:invalid {
 }
 
 
-.option {}
+@media (max-width: 1020px) and (min-width: 768px) {
+  .form {
+    width: 650px;
+    height: 570px;
+  }
+}
+//  для телефона
+@media (max-width: 767px) and (min-width: 420px) {
+  .form {
+    width: 420px;
+    height: 570px;
+  }
+  .request_text_title{
+    font-size: 28px;
+  }
+  .request_text_desk{
+    font-size: 20px;
+  }
+  .form_input{
+    width: 380px;
+  }
+ .send{
+  width: 380px;
+ }
+}
 </style>

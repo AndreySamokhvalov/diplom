@@ -520,8 +520,63 @@ export default {
     color: $btn_color;
 
 }
-
+//  для телефона
 @media (max-width: 767px) and (min-width: 420px) {
+    .tit_complexity {
+        font-size: 12px;
+        margin-top: -10px;
+        margin-left: 100px;
+    }
+
+    .filter__optional_name {
+        font-size: 12px;
+    }
+
+
+    .tit_time {
+        margin-top: -10px;
+        font-size: 12px;
+        margin-left: 250px;
+    }
+
+    .tit_size {
+        margin-top: -10px;
+        font-size: 12px;
+        margin-left: 400px;
+
+    }
+
+    svg {
+        height: 23px;
+        margin-top: -60px;
+        margin-left: 400px;
+    }
+
+    .filter__title_elem1 {
+        margin-top: 6px;
+        margin-bottom: 10px;
+    }
+
+    .no_filter {
+
+
+        margin-right: 50px;
+        margin-top: 26px;
+        cursor: pointer;
+
+        &:hover path {
+            fill: $btn_color;
+            transition: .3s;
+        }
+
+        &:active path {
+            fill: rgb(234, 119, 119);
+            border: 1px solid var(--btn_bg, #b30000);
+
+        }
+
+    }
+
     .catalog {
         overflow: hidden;
     }
@@ -576,14 +631,16 @@ export default {
         font-size: 22px;
         margin-left: -20px;
     }
+
     .tit_complexity {
         font-size: 12px;
         margin-left: 100px;
     }
+
     .filter__optional_name {
         font-size: 12px;
     }
-    
+
 
     .tit_time {
         font-size: 12px;
@@ -627,16 +684,20 @@ export default {
 
 }
 
-@media (max-width: 1441px)and (min-width: 1041px) {
+@media (max-width: 1450px)and (min-width: 1022px) {
+
+
     .filter {
+
+        max-height: 200px;
         margin-left: 32px;
+        margin-right: 32px;
     }
 
     .header {
         margin-left: 32px;
+        margin-right: 32px;
     }
 
-    .footer {
-        margin-left: 32px;
-    }
+
 }</style>

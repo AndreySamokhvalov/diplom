@@ -1,8 +1,8 @@
 <template>
     <div class="carousel center">
-        
+
         <div class="inner" ref="inner" :style="innerStyles">
-            
+
             <div class="card" v-for="card in getPaths()" :key="card">
                 <div @click="toggleModal(), send(card), show()" class="catalog-preview__catalog_item">
                     <img :src=card.url alt="paht1" class="item_img">
@@ -38,19 +38,19 @@
 
 
                 </div>
-                
+
                 <!-- <Modal v-show="isShowModal" @close="toggleModal" :itemData="getPathsInfo()" /> -->
             </div>
-            
+
         </div>
-        
+
         <div class="btn_group">
             <!-- убираю стрелочки из модального окна с помощью v-show -->
-            <img @click="prev"  src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
-            <img @click="next"  src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
+            <img @click="prev" src="../assets/slide_l.svg" alt="rigth" class="rul_btn rul_btn_r">
+            <img @click="next" src="../assets/slide_r.svg" alt="left" class="rul_btn rul_btn_l">
         </div>
         <FoRma v-show=visible @close="show()" />
-        
+
 
     </div>
 </template>
@@ -70,7 +70,7 @@ export default {
                 description: ""
 
             },
-        
+
             innerStyles: {},
             step: '',
             transitioning: false
@@ -92,8 +92,8 @@ export default {
         send(item) {
             this.test.title = item.title;
             this.test.description = item.description;
-            
-           
+
+
 
         },
         getPathsInfo() {
@@ -195,7 +195,7 @@ export default {
 }
 
 .inner {
-    transition: transform  0.3s;
+    transition: transform 0.3s;
     white-space: nowrap;
 }
 
@@ -214,11 +214,13 @@ export default {
         left: 700px;
     }
 }
-.in__catalog{
+
+.in__catalog {
     width: 390px;
     height: 626px;
 
 }
+
 .card {
     width: 390px;
     height: 626px;
@@ -226,7 +228,8 @@ export default {
     border: 3px solid white;
     display: inline-flex;
     transition: border .3s;
-    &:hover{
+
+    &:hover {
         border: 3px solid $btn_color;
         border-radius: 12px;
         transform: transition border .3s;
@@ -353,11 +356,33 @@ button {
 
 
 }
-// @media (max-width: 1020px) and (min-width: 768px) {
-//     .carousel{
-//         display: none;
-//     }
-  
-// }
+
+@media (max-width: 1450px)and (min-width: 1022px) {
+    .carousel {
+        max-width: 1340px;
+        display: none;
+    }
+
+    .btn_group {
+        display: none;
+    }
+
+    // .rul_btn {
+    //     width: 50px;
+
+    //     &_r {
+    //         // position: relative;
+    //         top: -560px;
+    //         left: -600px;
+    //     }
+
+    //     &_l {
+    //         position: relative;
+    //         top: -430px;
+    //         left: 600px;
+    //         // z-index: 10;
+    //     }
+    // }
+}
 </style>
   

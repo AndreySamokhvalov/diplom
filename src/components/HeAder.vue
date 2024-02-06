@@ -92,9 +92,20 @@ export default {
        width: 640px; 
     }
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
+@media (max-width: 1050px)and (min-width: 1021px) {
     .header{
        width: 875px; 
+    }
+}
+@media (max-width: 767px) and (min-width: 420px) {
+    .header{
+       width: 420px; 
+       left: 2px;
+ 
+    }
+    .header__links{
+       font-size: 8px;
+       left: 0px;
     }
 }
 </style>

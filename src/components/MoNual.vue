@@ -20,17 +20,17 @@
             </div>
         </div>
         <div class="monual__title">
-            <h1 class="monual__title_text_first">
+            <h1 class="monual__title_text_first texet">
                 присоединяйтесь к любой группе
 
             </h1>
             <div class="adder">
                 <h1 class="monual__title_text"> или организуйте</h1>
-                <h1 class="monual__title_text monual__title_text2">свою экспедицию!</h1>
+                <h1 class="monual__title_text monual__title_text2 texet">свою экспедицию!</h1>
             </div>
             <img src="../assets/name_board_mypath.svg" alt="" class="monual__title_img">
         </div>
-        <button class="monual__more btns_config">подробнее</button>
+        <button class="monual__more btns_config texet">подробнее</button>
     </div>
 </template>
 
@@ -178,6 +178,51 @@ export default {
         top: 70px;
     }
 }
+//  для телефона
+@media (max-width: 767px) and (min-width: 420px) {
+    .monual__title_img {
+        display: none;
+    }
+
+    .monual__icons {
+        // margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+
+    }
+
+    .monual__icons_elm_description {
+        font-size: 20px;
+        margin-top: 18px;
+    }
+
+    .monual__title {
+        width: auto;
+        align-items: center;
+    }
+
+    .monual__title_text {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .monual__title_text2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .monual__title_text_first {
+        font-size: 26px;
+        text-align: center;
+    }
+    .adder {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+}
 
 @media (max-width: 1020px) and (min-width: 766px) {
     .monual__title_img {
@@ -213,13 +258,18 @@ export default {
     }
 
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
+
+@media (max-width: 1450px)and (min-width: 1022px) {
     .monual__title_img {
         display: none;
     }
 
-    .monual__icons_elm {
-        margin-bottom: 32px;
+    .monual__icons {
+        // margin-bottom: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+
     }
 
     .monual__icons_elm_description {
@@ -237,13 +287,16 @@ export default {
     }
 
     .monual__title_text2 {
-        font-size: 32px;
+        font-size: 38px;
         text-align: center;
     }
 
     .monual__title_text_first {
-        font-size: 32px;
+        font-size: 38px;
         text-align: center;
     }
+
+   
+
 }
 </style>

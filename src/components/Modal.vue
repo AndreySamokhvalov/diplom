@@ -257,6 +257,36 @@
   margin-left: 24px;
 }
 }
+@media (max-width: 767px) and (min-width: 420px) {
+  .modal__img{
+    display: none;
+  }
+.modal-content{
+  display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 100%;
+    height: 650px;
+    max-width: 425px;
+    margin: 1.75rem auto;
+    padding: 20px 30px;
+    border-radius: 36px;
+    color: #000;
+    background-color: #fff;
+    transform: translate(0, 0);
+    transition: all 0.3s ease;
+    position: relative;
+    right: 20px;
+    top: -45px;
+    overflow-x: auto;
+    z-index: 23;
+    border: 3px solid #19A2DC;
+    align-items: flex-start;
+}
+.modal__btn{
+  width:330px;
+}
+}
 </style>
 
 <script>

@@ -11,8 +11,7 @@
                 <h4 class="promo__phone_elem">8(999) 960 6060</h4>
             </div>
             <div class="promo__address">
-                <span class="promo__address_elem">
-                    Москва, Краснопресненская улица 43к3
+                <span class="promo__address_elem">Москва, Краснопресненская улица 43к3
                 </span>
             </div>
 
@@ -310,6 +309,46 @@ export default {
     }
 
     .promo__address_elem {
+        margin-left: 12px;
+        font-size: 16px;
+    }
+
+    .info_desk_text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) and (min-width: 420px) {
+    .footer {
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .footer__promo {
+        gap: 0px;
+
+    }
+
+    .promo__address {
+        text-align: left;
+        padding-left: 6px;
+    }
+
+    .promo__phone {
+        margin-bottom: 12px;
+    }
+
+    .promo__text_elem {
+        font-size: 16px;
+    }
+
+    .promo__phone_elem {
+        font-size: 18px;
+        margin-top: 16px;
+    }
+
+    .promo__address_elem {
+
         margin-left: 12px;
         font-size: 16px;
     }

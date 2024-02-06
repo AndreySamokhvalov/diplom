@@ -200,14 +200,45 @@ export default {
     margin-top: 60px;
     margin-bottom: 90px;
 }
+//  для телефона
+@media (max-width: 767px) and (min-width: 420px) {
+    .catalog-preview {
+        display: none;
+    }
+}
 @media (max-width: 1020px) and (min-width: 768px) {
-    .catalog-preview{
+    .catalog-preview {
         display: none;
     }
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
-    .catalog-preview{
+
+@media (max-width: 1450px)and (min-width: 1022px) {
+    .catalog-preview {
         display: none;
     }
-}
-</style>
+    .catalog-preview__text_title {
+        font-size: 38px;
+    }
+
+    .catalog-preview__text_desk {
+        font-size: 22px;
+    }
+
+    .description {
+
+        max-width: 800px;
+    }
+
+    .catalog-preview__text {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 40px;
+
+    }
+
+    .catalog-preview {
+        // display: none;
+    }
+}</style>

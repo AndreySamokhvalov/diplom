@@ -297,7 +297,25 @@ export default {
 }
 
 
+@media (max-width: 767px) and (min-width: 420px) {
+    .comand__cards {
+        flex-direction: column;
+    }
 
+    .comand__text_title {
+        width: 425px;
+        font-size: 32px;
+    }
+
+    .comand__text_desk {
+        width: 400px;
+        padding-left: 12px;
+
+    
+        height: auto;
+        font-size: 20px;
+    }
+}
 @media (max-width: 1020px) and (min-width: 766px) {
     .comand__cards {
         flex-direction: column;
@@ -314,7 +332,7 @@ export default {
         font-size: 20px;
     }
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
+@media (max-width: 1450px)and (min-width: 1022px) {
     .comand__cards {
         // flex-direction: column;
     }
@@ -324,13 +342,13 @@ export default {
 
     .comand__text_title {
         width: 640px;
-        font-size: 40px;
+        font-size: 38px;
     }
 
     .comand__text_desk {
         width: 600px;
         height: auto;
-        font-size: 26px;
+        font-size: 22px;
     }
 }
 

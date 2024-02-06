@@ -2,11 +2,11 @@
     <div class="helper center">
         <div class="helper__text">
             <div class="helper__text_title">
-                <h2 class="helper__text_title_elem">Остались вопросы?</h2>
+                <h2 class="helper__text_title_elem">ОСТАЛИСЬ ВОПРОСЫ?</h2>
             </div>
             <div class="helper__text_desk">
                 <span class="helper__text_desk_elem">
-                    наши люди свяжутся с вашими людьми
+                    наши люди свяжутся с Вами
                 </span>
             </div>
             <div class="helper__text_btn">
@@ -35,12 +35,12 @@ export default {
     },
 
     mounted() {
-        
+
     },
     created() {
 
     },
-  
+
 
     methods: {
 
@@ -120,21 +120,37 @@ export default {
         margin-bottom: 90px;
     }
 }
+
 @media (max-width: 1020px) and (min-width: 766px) {
-    .helper__text_title_elem{
+    .helper__text_title_elem {
         font-size: 32px;
     }
-    .helper__text_desk_elem{
+
+    .helper__text_desk_elem {
         font-size: 20px;
     }
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
-    .helper__text_title_elem{
-        font-size: 40px;
+
+@media (max-width: 1050px)and (min-width: 1021px) {
+    .helper {}
+
+    .helper__text_title_elem {
+
+        font-size: 48px;
     }
-    .helper__text_desk_elem{
+
+    .helper__text_desk_elem {
         font-size: 26px;
     }
 }
 
-</style>
+@media (max-width: 767px) and (min-width: 420px) {
+    .helper__text_title_elem {
+
+        font-size: 34px;
+    }
+
+    .helper__text_desk_elem {
+        font-size: 22px;
+    }
+}</style>

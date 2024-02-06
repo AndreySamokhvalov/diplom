@@ -80,10 +80,30 @@
             </div>
         </transition-group>
         <div class="btn btn-prev" aria-label="Previous slide" @click="slide(-1)">
-            <img src="../assets/slide_l.svg" alt="rigth">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<path d="M30.0002 0C13.4584 0 0.000976562 13.4589 0.000976562 29.9998C0.000976562 46.5426 13.4584 60 30.0002 60C46.5421 60 59.999 46.5426 59.999 29.9998C59.999 13.4589 46.5421 0 30.0002 0ZM24.0249 30.3407L35.5471 41.8644C35.6702 41.9864 35.7378 42.1498 35.7378 42.3235C35.7378 42.4995 35.6702 42.662 35.5471 42.7821L34.4577 43.874C34.214 44.1176 33.7807 44.1186 33.5375 43.874L20.1457 30.4827C20.0232 30.3592 19.9566 30.1933 19.9585 30.0046C19.9566 29.8252 20.0232 29.6608 20.1453 29.5363L33.5579 16.1246C33.68 16.0025 33.8424 15.9349 34.017 15.9349C34.1902 15.9349 34.356 16.0025 34.4766 16.1246L35.5671 17.2164C35.8224 17.4669 35.8224 17.8813 35.5675 18.1342L24.0249 29.6783C23.8415 29.8611 23.8415 30.1568 24.0249 30.3407Z" fill="#19A2DC"/>
+</g>
+</svg>
         </div>
         <div class="btn btn-next" aria-label="Next slide" @click="slide(1)">
-            <img src="../assets/slide_r.svg" alt="left">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5" filter="url(#filter0_d_95_223)">
+<path d="M30.0002 0C13.458 0 0.000244141 13.4577 0.000244141 30.001C0.000244141 46.5418 13.458 60 30.0002 60C46.5425 60 59.9998 46.5418 59.9998 30.001C59.9998 13.4577 46.5425 0 30.0002 0ZM39.0476 30.4577L25.6341 43.8707C25.3905 44.1148 24.9596 44.1148 24.7154 43.8707L23.6235 42.7802C23.3711 42.5268 23.3716 42.1139 23.624 41.8605L35.1693 30.3166C35.2559 30.2291 35.305 30.1099 35.305 29.9844C35.305 29.8609 35.2554 29.7408 35.1693 29.6537L23.6449 18.1298C23.5233 18.0082 23.4552 17.8448 23.4552 17.6687C23.4552 17.496 23.5228 17.3316 23.6444 17.211L24.7349 16.1196C24.8569 15.998 25.0208 15.9304 25.1945 15.9304C25.3691 15.9294 25.5315 15.998 25.6536 16.1196L39.0476 29.5131C39.1716 29.6367 39.2388 29.8016 39.2363 29.9917C39.2388 30.1688 39.1716 30.3341 39.0476 30.4577Z" fill="#19A2DC"/>
+</g>
+<defs>
+<filter id="filter0_d_95_223" x="-3.99976" y="0" width="67.9995" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_95_223"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_95_223" result="shape"/>
+</filter>
+</defs>
+</svg>
         </div>
     </div>
 </template>
@@ -348,7 +368,28 @@ body {
 .btn:hover {
     transform: scale(1.1);
 }
+@media (max-width: 767px) and (min-width: 420px) {
+    svg{
+        height: 35px;
 
+    }
+    .banner__show_first_title_elem {
+        font-size: 30px;
+    }
+    .banner__show_first_desk_elem {
+        font-size: 16px;
+    }
+
+    .name_bord {
+        display: none;
+    }
+
+    .banner__show_first_btn_elem {
+        margin-bottom: 214px;
+
+    }
+
+}
 @media (max-width: 1020px) and (min-width: 766px) {
 
     .banner__show_first_title_elem {
@@ -364,9 +405,9 @@ body {
 
     }
 }
-@media (max-width: 1040px)and (min-width: 1021px) {
+@media (max-width: 1450px)and (min-width: 1022px) {
     .banner__show_first_title_elem {
-        font-size: 46px;
+        font-size: 58px;
     }
     .banner__show_first_desk_elem {
         font-size: 20px;
@@ -377,7 +418,7 @@ body {
     }
 
     .banner__show_first_btn_elem {
-        margin-bottom: 214px;
+    
 
     }
 }
