@@ -4,26 +4,26 @@
         <div id="catalog" class="catalog center">
             <div class="header center">
                 <div class="header__comand">
-                    <a href="http://localhost:8080/#comand" class="">
+                    <a href="http://localhost:3000/#comand" class="">
                         <h3 class="header__comand_elem header__links">КОМАНДА</h3>
                     </a>
                 </div>
                 <div class="header__advantages">
-                    <a href="http://localhost:8080/#advantages" class="">
+                    <a href="http://localhost:3000/#advantages" class="">
                         <h3 class="header__advantages_elem header__links">ПОЧЕМУ МЫ?</h3>
                     </a>
                 </div>
                 <div class="header__logo">
-                    <a href="http://localhost:8080/" class=""><img src="../assets/logo.svg" alt="logo"
+                    <a href="http://localhost:3000/" class=""><img src="../assets/logo.svg" alt="logo"
                             class="header__logo_elem"></a>
                 </div>
                 <div class="header__catalog">
-                    <a href="http://localhost:8080/" class="">
+                    <a href="http://localhost:3000/" class="">
                         <h3 class="header__catalog_elem header__links">ГЛАВНАЯ</h3>
                     </a>
                 </div>
                 <div class="header__contacts">
-                    <a href="http://localhost:8080/#footer" class="">
+                    <a href="http://localhost:3000/#footer" class="">
                         <h3 class="header__contacts_elem header__links">КОНТАКТЫ</h3>
                     </a>
                 </div>
@@ -35,7 +35,6 @@
                     <div class="board__search">
                         <h3 class="filter__title_elem1" @click="filtrItems()">подобрать</h3>
                     </div>
-                    <!-- <h3 class="filter__title_elem2">маршрут по:</h3> -->
                 </div>
                 <details class="filter__elem tit_complexity">
                     <summary class="filter__summary"><span :class="{ 'activeDet': isActive12 || isActive11 || isActive13 }"

@@ -14,7 +14,6 @@
 import { mapGetters } from 'vuex';
 import { mapState } from 'vuex';
 import { mapMutations } from 'vuex';
-// import { mapMutations } from 'vuex';
 export default {
   
   name: 'App',
@@ -32,8 +31,7 @@ export default {
 
 
   methods: {
-    // создаю мутацию
-    ...mapMutations(["SET_PATHLIST"])
+
 
   },
   computed: {

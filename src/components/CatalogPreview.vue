@@ -16,9 +16,6 @@
             <CaRousel />
         </div>
 
-        <!-- <div class="select__btn">
-            <button class="select__btn_elem btns_config">Смотреть все</button>
-        </div> -->
     </div>
 </template>
 

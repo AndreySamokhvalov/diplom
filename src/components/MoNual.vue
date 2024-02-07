@@ -30,7 +30,7 @@
             </div>
             <img src="../assets/name_board_mypath.svg" alt="" class="monual__title_img">
         </div>
-        <button class="monual__more btns_config texet">подробнее</button>
+        <router-link to="/about"><button class="monual__more btns_config texet">подробнее</button></router-link>
     </div>
 </template>
 

@@ -1,19 +1,19 @@
 <template>
     <div class="header center">
         <div class="header__comand">
-           <a href="#comand" class=""> <h3 class="header__comand_elem header__links">КОМАНДА</h3></a>
+           <a href="http://localhost:3000/#comand" class=""> <h3 class="header__comand_elem header__links">КОМАНДА</h3></a>
         </div>
         <div class="header__advantages">
-            <a href="#advantages" class=""> <h3 class="header__advantages_elem header__links">ПОЧЕМУ МЫ?</h3></a>
+            <a href="http://localhost:3000/#advantages" class=""> <h3 class="header__advantages_elem header__links">ПОЧЕМУ МЫ?</h3></a>
         </div>
         <div class="header__logo">
-            <a href="http://localhost:8080/" class=""><img src="../assets/logo.svg" alt="logo" class="header__logo_elem"></a>
+            <a href="http://localhost:3000/" class=""><img src="../assets/logo.svg" alt="logo" class="header__logo_elem"></a>
         </div>
         <div class="header__catalog">
-            <a href="http://localhost:8080/catalog" class=""><h3 class="header__catalog_elem header__links">НАШИ ПОХОДЫ</h3></a>
+            <router-link to="/catalog"><h3 class="header__catalog_elem header__links">НАШИ ПОХОДЫ</h3></router-link>|
         </div>
         <div class="header__contacts">
-           <a href="#footer" class=""><h3 class="header__contacts_elem header__links">КОНТАКТЫ</h3></a> 
+           <a href="http://localhost:3000/#footer" class=""><h3 class="header__contacts_elem header__links">КОНТАКТЫ</h3></a> 
         </div>
 
     </div>
@@ -87,6 +87,9 @@ export default {
         }
     }
 }
+.header__catalog_elem{
+    padding-top: 12px;
+}
 @media (max-width: 1020px) and (min-width: 766px) {
     .header{
        width: 640px; 
@@ -107,5 +110,6 @@ export default {
        font-size: 8px;
        left: 0px;
     }
+    
 }
 </style>

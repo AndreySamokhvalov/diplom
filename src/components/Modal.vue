@@ -23,9 +23,6 @@
             </div>
           </div>
           <div class="modal__desk">
-            <!-- <div class="exit">
-              <img @click="closeModal" src="../assets/close_btn.svg" alt="" class="exit_elem">
-            </div> -->
             <div class="modal-header">
 
               {{ itemData.title }}

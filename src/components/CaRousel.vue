@@ -179,17 +179,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .btn_group{
-//     display: flex;
-//     justify-content: space-evenly;
-//     flex-direction: row;
-//     flex-wrap: nowrap;
-//     align-items: center;
-// }   
 .carousel {
     max-width: 1520px;
-    // display: flex;
-    // max-width: 760px;
     overflow: hidden;
     margin-bottom: 100px;
 }
@@ -235,16 +226,9 @@ export default {
         transform: transition border .3s;
     }
 
-    /* optional */
-
-    // background-color: #39b1bd;
-    // color: white;
-    // border-radius: 4px;
-    // align-items: center;
-    // justify-content: center;
 }
 
-/* optional */
+
 button {
     margin-right: 5px;
     margin-top: 10px;
@@ -282,7 +266,6 @@ button {
 .item_rating {
     position: relative;
     top: -750px;
-    // right: 200px;
     left: 30px;
 }
 
@@ -367,22 +350,6 @@ button {
         display: none;
     }
 
-    // .rul_btn {
-    //     width: 50px;
-
-    //     &_r {
-    //         // position: relative;
-    //         top: -560px;
-    //         left: -600px;
-    //     }
-
-    //     &_l {
-    //         position: relative;
-    //         top: -430px;
-    //         left: 600px;
-    //         // z-index: 10;
-    //     }
-    // }
 }
 </style>
   

@@ -14,7 +14,7 @@ export default new VueRouter({
       component: HomeView
     },
     {
-      path: '/about',
+      path: '/about*',
       name: 'about',
       component: () => import('../views/AboutView.vue')
     },
@@ -23,7 +23,7 @@ export default new VueRouter({
       name: 'catalog',
       component: CatalogView
     },
-  ]
+   ]
 
 
 })
@@ -31,29 +31,3 @@ export default new VueRouter({
 
 
 
-
-
-
-// const routes = [
-//   {
-//     path: '/',
-//     name: 'home',
-//     component: HomeView
-//   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import('../views/AboutView.vue')
-  // },
-//   {
-//     path: '/catalog',
-//     name: 'catalog',
-//     component: CatalogView
-//   }
-// ]
-
-// const router = new VueRouter({
-//   routes
-// })
-
-// export default router

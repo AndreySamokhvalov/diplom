@@ -11,18 +11,7 @@ router.get('/', async (req, res) => {
    res.json(await Record.find());
 });
 
-//  новые запросы
 
-// router.get('/pathList', async (req, res) => {
-//    res.json(await ShowPaths.find());
-// });
-
-// router.post('/pathList', async (req, res) => {
-//    const record1 = new ShowPaths(req.body);
-//    await record1.save();
-//    res.json({ state: 'success' });
-// });
-// ==============
 router.post('/', async (req, res) => {
    const record = new Record(req.body);
    await record.save();
@@ -30,14 +19,15 @@ router.post('/', async (req, res) => {
    // ===============================
 
    const output = `
-   <h1>Новая заявка на поход!</h1>
+   <img src="../assets/logo.svg" alt="logo" class="header__logo_elem">
+   <h1>Создана новая заявка на поход!</h1>
    <p>
         <ul>
-       <li>name: ${req.body.name}</li>
+       <li>Имя: ${req.body.name}</li>
        <li>email: ${req.body.email}</li>
-       <li>address: ${req.body.address}</li>
-       <li>gender: ${req.body.gender}</li>
-       <li>path: ${req.body.path}</li>
+       <li>телефон: ${req.body.address}</li>
+       <li>пол: ${req.body.gender}</li>
+       <li>Маршрут/консультация: ${req.body.path}</li>
      </ul>
      </p>
      `;
@@ -61,7 +51,7 @@ router.post('/', async (req, res) => {
    });
 
    let mailOptions = {
-      from: '"turist_project" <samokvalov.andy93@mail.ru>',
+      from: '"Лесной драв" <samokvalov.andy93@mail.ru>',
       to: mailArr,
       subject: `turist_project | Новая заявка`,
       text: req.body.name,

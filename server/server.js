@@ -14,28 +14,15 @@ mongoose.connect('mongodb://127.0.0.1/pathList', {
     .then(db => console.log('[OK] requestsDB is connected'))
     .catch(err => console.error(err));
 
-    mongoose.connections.length; // 1, just the default connection
-    mongoose.connections[0] === mongoose.connection; // true
+    // mongoose.connections.length; // 1, just the default connection
+    // mongoose.connections[0] === mongoose.connection; // true
     
-    mongoose.createConnection('mongodb://127.0.0.1/pathsdb', { 
-        useNewUrlParser: true,
-        useUnifiedTopology: true })
+    // mongoose.createConnection('mongodb://127.0.0.1/pathsdb', { 
+    //     useNewUrlParser: true,
+    //     useUnifiedTopology: true })
         
-    mongoose.connections.length;
+    // mongoose.connections.length;
 
-
-// mongoose.connect('mongodb://127.0.0.1/mybd', { 
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true })
-//     .then(db => console.log('[OK] DB is connected'))
-//     .catch(err => console.error(err));
-
-
-// // добавляю подключение к еще одной бд
-
-// mongoose.createConnection('mongodb://127.0.0.1/pathsdb', { 
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true })
 
 
 

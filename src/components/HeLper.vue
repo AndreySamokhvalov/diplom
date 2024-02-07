@@ -1,12 +1,12 @@
 <template>
-    <div class="helper center">
+    <div id="helper" class="helper center">
         <div class="helper__text">
             <div class="helper__text_title">
                 <h2 class="helper__text_title_elem">ОСТАЛИСЬ ВОПРОСЫ?</h2>
             </div>
             <div class="helper__text_desk">
                 <span class="helper__text_desk_elem">
-                    наши люди свяжутся с Вами
+                    оставьте заявку - наши люди свяжутся с Вами
                 </span>
             </div>
             <div class="helper__text_btn">

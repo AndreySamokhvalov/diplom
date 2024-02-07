@@ -5,7 +5,7 @@
             <div v-if="show" :key="current" class="slide" :class="slides[current].className">
                 <div v-show="slides[current].className == 'banner1'" class="banner__show_first">
                     <div class="banner__show_first_title">
-                        <a href="http://localhost:8080/catalog" class="">
+                        <a href="http://localhost:3000/catalog" class="">
                             <h1 class="banner__show_first_title_elem">мечтаешь отправиться #в поход с такими же, как ты?
                             </h1>
                         </a>
@@ -15,8 +15,8 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
-                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
+                        <a href="http://localhost:3000/#footer" class=""> <button class="banner__show_first_btn_elem btns_config_for_blue"><span
+                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button></a>
                     </div>
                     <div class="name_bord">
                         <img src="../assets/name_board_banner.svg" alt="">
@@ -32,8 +32,8 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
-                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
+                        <a href="http://localhost:3000/#footer" class=""> <button class="banner__show_first_btn_elem btns_config_for_blue"></button><button class="banner__show_first_btn_elem btns_config_for_blue"><span
+                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button></a>
                     </div>
                     <div class="name_bord board2">
                         <img src="../assets/board2.svg" alt="">
@@ -50,8 +50,8 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
-                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
+                        <a href="http://localhost:3000/#footer" class=""> <button class="banner__show_first_btn_elem btns_config_for_blue"></button><button class="banner__show_first_btn_elem btns_config_for_blue"><span
+                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button></a>
                     </div>
                     <div class="name_bord board3">
                         <img src="../assets/board3.svg" alt="">
@@ -67,8 +67,8 @@
                             на природе - залог здоровья каждого!</p>
                     </div>
                     <div class="banner__show_first_btn">
-                        <button class="banner__show_first_btn_elem btns_config_for_blue"><span
-                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button>
+                        <a href="http://localhost:3000/#footer" class=""> <button class="banner__show_first_btn_elem btns_config_for_blue"></button><button class="banner__show_first_btn_elem btns_config_for_blue"><span
+                                class="banner__show_first_btn_elem_text">заполнить заявку</span></button></a>
                     </div>
                     <div class="name_bord board4">
                         <img src="../assets/name_board_banner.svg" alt="">
